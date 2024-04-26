@@ -23,7 +23,7 @@ const LoadingBlock = styled.div`
 const Layout = () => {
     const dispatch = useDispatch()
 
-    const [loading, setLoading] = useState(false)
+    const [loading, setLoading] = useState(true)
 
     useEffect(()=>{
         dispatch(fetchProducts())
