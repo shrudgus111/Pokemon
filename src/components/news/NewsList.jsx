@@ -80,6 +80,21 @@ padding: 50px 0 130px;
             }
         }
     }
+    .no_result {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0 auto;
+        gap: 15px;
+        h3 {
+            font-size: 28px;
+            font-weight: 600;
+        }
+        p {
+            font-size: 16px;
+            font-weight:400;
+        }
+    }
 `
 
 const NewsList = () => {
@@ -88,45 +103,54 @@ const NewsList = () => {
     const filteredNews = news.filter(item => {
         return item.title.toLowerCase().includes(title.toLowerCase());
       });
-
+      let renderedNews;
+  
+      if (title && filteredNews.length > 0) {
+        renderedNews = filteredNews.map((newsItem, index) => (
+          <div key={index} className='news'>
+            <div className='newsWrap'>
+                <div className='thum'>
+                    <img src={newsItem.img} alt={newsItem.title}/>
+                    {newsItem.badge && <img className='badge' src="src/assets/image/badge_tri_gradient.png"/>}
+                </div>
+                <div className='text'>
+                    <h3>{newsItem.title}</h3>
+                    <div className='detail'>
+                        <span>{newsItem.type}</span>  |  <span>{newsItem.date}</span>
+                    </div>
+                </div>
+            </div>
+          </div>
+        ));
+      } else if (title && !filteredNews.length) {
+        renderedNews = <div className='no_result'>
+                            <div><img src="src/assets/image/no_result2.png" alt="" /></div>
+                            <h3>검색결과가 없습니다.</h3>
+                            <p>다른 키워드로 검색해주세요</p>
+                        </div>;
+      } else {
+        renderedNews = news.map((item, index) => (
+            <div key={index} className='news'>
+                <div className='newsWrap'>
+                    <div className='thum'>
+                        <img src={item.img} alt={item.title} />
+                        {item.badge && <img className='badge' src="src/assets/image/badge_tri_gradient.png"/>}
+                    </div>
+                    <div className='text'>
+                        <h3>{item.title}</h3>
+                        <div className='detail'>
+                            <span>{item.type}</span><span>{item.date}</span>
+                        </div>
+                    </div>
+                </div>
+          </div>
+        ));
+      }
 
     return (
         <NewsListBlock>
             <div className='container'>
-                {filteredNews.length > 0 ? (
-                    filteredNews.map((newsItem, index) => (
-                        <div key={index} className="news">
-                            <div className='newsWrap'>
-                                <div className='thum'>
-                                    <img src={newsItem.img} alt={newsItem.title}/>
-                                    {newsItem.badge && <img className='badge' src="src/assets/image/badge_tri_gradient.png"/>}
-                                </div>
-                                <div className='text'>
-                                    <h3>{newsItem.title}</h3>
-                                    <div className='detail'>
-                                        <span>{newsItem.type}</span>  |  <span>{newsItem.date}</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    ))
-                ): (
-                    news.map((item, index) => (
-                        <div key={index} className="news">
-                            <div className='newsWrap'>
-                                <div className='thum'>
-                                    <img src={item.img} alt={item.title} />
-                                </div>
-                                <div className='text'>
-                                    <h3>{item.title}</h3>
-                                    <div className='detail'>
-                                        <span>{item.type}</span><span>{item.date}</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    ))
-                )}
+                {renderedNews}
             </div>
         </NewsListBlock>
     );

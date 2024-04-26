@@ -18,6 +18,7 @@ max-width: 1200px;
 margin: auto;
 display: flex;
 flex-wrap: wrap;
+padding: 50px 0 130px;
 .card {
   width: 18.3%;
   max-width: 60%;
@@ -41,35 +42,57 @@ flex-wrap: wrap;
     z-index: 2; /* 호버 시 z-index 값을 높여 맨 위로 올립니다. */
   }
 }
+.no_result {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  gap: 15px;
+  h3 {
+      font-size: 28px;
+      font-weight: 600;
+  }
+  p {
+      font-size: 16px;
+      font-weight:400;
+  }
+}
 `
 const CardList = () => {
   const name = useSelector(state => state.card.name);
-  console.log(name);
 
   const filteredCards = card.filter(item => {
-    const slicedName = item.name.slice(0, name.length);
-    return slicedName === name || (slicedName.length <= 3 && name.includes(slicedName));
+    return item.name.toLowerCase().includes(name.toLowerCase());
   });
 
+  let renderedCards;
+  
+  if (name && filteredCards.length > 0) {
+    renderedCards = filteredCards.map((cardItem, index) => (
+      <div key={index} className='card'>
+        <a href='#'>
+          <img src={cardItem.img} alt={cardItem.name} />
+        </a>
+      </div>
+    ));
+  } else if (name && !filteredCards.length) {
+    renderedCards = <div className='no_result'>
+                      <div><img src="src/assets/image/no_result2.png" alt="" /></div>
+                      <h3>검색결과가 없습니다.</h3>
+                      <p>다른 키워드로 검색해주세요</p>
+                    </div>;
+  } else {
+    renderedCards = card.map((item, index) => (
+      <div key={index} className='card'>
+        <a href='#'>
+          <img src={item.img} alt={item.name} />
+        </a>
+      </div>
+    ));
+  }
   return (
     <CardListBlock>
-        {filteredCards.length > 0 ? (
-          filteredCards.map((cardItem, index) => (
-            <div key={index} className='card'>
-                <a href='#'>
-                    <img src={cardItem.img} alt={cardItem.name} />
-                </a>
-            </div>
-          ))
-        ) : (
-          card.map((item, index) => (
-            <div key={index}>
-                <a href='#'>
-                    <img src={item.img} alt={item.name} />
-                </a>
-            </div>
-          ))
-        )}
+        {renderedCards}
     </CardListBlock>
   );
 };
