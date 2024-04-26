@@ -6,8 +6,11 @@ import ProductView from '@/views/ProductView'
 import CartView from '@/views/CartView'
 import LoginView from '@/views/LoginView'
 import JoinView from '@/views/JoinView'
+import EventView from '@/views/EventView'
 import ApplicationView from '@/views/ApplicationView';
 import PlayView from '@/views/PlayView';
+import CardView from '@/views/CardView';
+import NewsView from '@/views/NewsView';
 // import MemberModifyView from '@/views/MemberModifyView'
 
 const App = () => {
@@ -18,9 +21,9 @@ const App = () => {
         <Route path="/news" element={ <NewsView />} />
         <Route path="/product" element={ <ProductView />} />
         <Route path="/cart" element={ <CartView />} />
-        <Route path="/product/:id" element={ <ProductDetailView />} />
-        <Route path="/productModify" element={ <ProductModifyView /> } />
-        <Route path="/productInsert" element={ <ProductInsertView />} />
+       
+      
+        
         <Route path="/search" element={ <CardView />} />
         <Route path="/event" element={ <EventView />} />
         <Route path="/login" element={ <LoginView /> } />
