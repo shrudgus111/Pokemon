@@ -43,10 +43,27 @@ const HeaderBlock = styled.div`
              height:120px;
             line-height:120px;
             padding:0 10px;
-          &:hover, &:nth-child(1).active { color: #fff;
-          background:#f00;
-         }
+        
         }
+        &:nth-child(1) a:hover, a.active  {
+          background:#ff5d0e  /* 새소식 링크에 대한 호버 시 배경색 변경 */
+        }
+        &:nth-child(2) a:hover, a.active   {
+          background: #ffa70e /* 제품정보 링크에 대한 호버 시 배경색 변경 */
+        }
+        &:nth-child(3) a:hover, a.active   {
+          background: #ffcb06 /* 제품정보 링크에 대한 호버 시 배경색 변경 */
+        }
+        &:nth-child(4) a:hover, a.active  {
+          background: #04a6e2 /* 제품정보 링크에 대한 호버 시 배경색 변경 */
+        }
+        &:nth-child(5) a:hover, a.active   {
+          background: #9b43ff /* 제품정보 링크에 대한 호버 시 배경색 변경 */
+        }
+        &:nth-child(6) a:hover, a.active   {
+          background: #eb3690  /* 제품정보 링크에 대한 호버 시 배경색 변경 */
+        }
+        
       }
     }
     .closeNav { display: none; }
