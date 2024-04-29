@@ -7,6 +7,7 @@ import { fetchProducts } from '@/store/product'
 import { userLogout, userLogin } from '@/store/member'
 import { FaUsers } from "react-icons/fa";
 import { FaUserCheck } from "react-icons/fa";
+import { MdOutlineCatchingPokemon } from "react-icons/md";
 
 const HeaderBlock = styled.div`
   .header__wrap{
@@ -54,19 +55,21 @@ const HeaderBlock = styled.div`
 `
 
 const ItemCount = styled.div`
-  position: absolute;
-  top: 20px;
-  right: 30px;
-  font-size: 30px;
-  color: blue;
+  position: fixed;
+  right:60px;
+  bottom:100px;
+  background:yellow;
+  border-radius: 20%;
+
+  
   span {
     position: absolute;
-    top: -2px;
-    right: -5px;
+    top: -10px;
+    right: 45px;
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    background: red;
+    background:#ff5d0e;
     color: #fff;
     font-size: 12px;
     line-height: 20px;
@@ -131,20 +134,18 @@ const Header = () => {
                 </div>
                 :
                 <div className="member">
-                    <Link to="/login"><FaUserCheck /></Link>
+                    <Link to="/login"><MdOutlineCatchingPokemon /></Link>
                     <Link to="/join"><FaUsers /></Link>
                 </div>
-  
-                
               }
            </div>
 
-{/* <ItemCount>
+<ItemCount>
               <Link to="/cart">
-                <BsCartPlusFill />
+                <img src="./assets/image/cart.png" alt="" />
                 <span>{ carts.length }</span> 
               </Link>
-            </ItemCount> */}
+            </ItemCount>
         </HeaderBlock>
     );
 };
