@@ -5,15 +5,41 @@ import { Link } from 'react-router-dom'
 const FooterBlock = styled.div`
     background: #000;
     color: #fff;
-    padding: 50px;
+    padding:20px 0 80px 0;
+   
+   
   
     .footer__nav {
-        border-bottom: 1px solid #fff;
+       display:flex;
+       justify-content: space-between;
+         padding: 50px;
         padding-bottom: 20px;
         margin-bottom: 20px;
-        a { margin-right: 50px; }
+        a { margin-right: 17px; }
+
+        .na{
+          span{
+            margin-left: 17px; 
+          }
+        }
+
+        .logo{
+            text-align:left;
+            display:inline-block;
+            left:0;
+        }
     }
     .footer__info {
+        display:flex;
+        justify-content: space-between;
+        align-items:center;
+        background: #1a1a1a;
+        width:100%;
+        padding:35px 46px;
+        .hc{
+            p{
+                margin:4px 0;
+            }
         span {
             position: relative;
             margin-left: 14px;
@@ -28,26 +54,56 @@ const FooterBlock = styled.div`
             }
         }
     }
+
+    .sns{
+       
+        .sn2{
+            display:flex;
+            align-items:center;
+
+            li{
+                 margin:0 7px;
+            }
+        }
+    }
+
+
+
+
+    }
 `
 
 const Footer = () => {
     return (
         <FooterBlock>
+       
             <div className="footer__nav">
-                <Link to="/">회사소개</Link>
-                <a href="#">이용약관</a>
-                <a href="#">개인정보처리방침</a>
-                <a href="http://www.naver.com" target="_blank">사업자정보확인</a>
-                <Link to="/">공지사항</Link>
+            <div className="logo"><img src="./assets/image/ft_logo.png" alt="" /></div>
+              <div className='na'>
+                    <Link to="/">회사소개 <span>|</span></Link>
+                    <a href="#">사업내용 <span>|</span></a>
+                    <a href="#">제휴안내 <span>|</span></a>
+                    <a href="http://www.naver.com" target="_blank">이용약관 <span>|</span></a>
+                    <Link to="/">개인정보처리방침 <span>|</span></Link>
+                    <a href="#">이메일무단수집거부 <span>|</span></a>
+                    <a href="#">고객센터</a>
+              </div>
             </div>
             <div className="footer__info">
-                {/* <p>회사명 : (주)스타쉽엔터테인먼트 <span>대표 : 이훈희, 이진성</span></p> */}
-                <p>사업자등록번호 : 114-86-65214 <span>통신판매업신고 : 제 2017-서울강남-00780호</span></p>
-                <p>주소 : 서울시 강남구 삼성로146길 4-5 스타쉽ENT (06070)</p>
-                <p>전화번호 : 070-5158-9176 <span>이메일 : starshipsquare@gmail.com</span></p>
-                <p>개인정보책임자 서승연 / starshipsquare@gmail.com</p>
-                <p>호스팅제공자 (주)코리아센터(메이크샵)</p>
-                <p>Copyright STARSHIP ENTERTAINMENT. All rights reserved.</p>
+                <div className="hc">
+                <p>(주)포켓몬코리아   경기도 용인시 수지구 신수로 801, 4층</p>
+                <p>대표이사:임재범   개인정보관리책임자:임재범   사업자등록번호:113-86-07676</p>
+                <p>©2024 Pokémon. ©1995-2024 Nintendo/Creatures Inc./GAME FREAK inc.</p>
+                </div>
+                <div className="sns">
+                    <ul className='sn2'>
+                        <li><img src="./assets/image/icon_faceb.png" alt="" /></li>
+                        <li><img src="./assets/image/icon_insta.png" alt="" /></li>
+                        <li><img src="./assets/image/icon_youtube.png" alt="" /></li>
+                        <li><img src="./assets/image/icon_pokemon.png" alt="" /></li>
+                    </ul>
+                </div>
+              
             </div>
         </FooterBlock>
     );

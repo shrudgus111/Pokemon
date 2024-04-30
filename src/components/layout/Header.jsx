@@ -74,9 +74,10 @@ const HeaderBlock = styled.div`
 const ItemCount = styled.div`
   position: fixed;
   right:60px;
-  bottom:100px;
+  bottom:190px;
   background:yellow;
   border-radius: 20%;
+  z-index:9999999999999999999999;
 
   
   span {

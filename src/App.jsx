@@ -21,9 +21,6 @@ const App = () => {
         <Route path="/news" element={ <NewsView />} />
         <Route path="/product" element={ <ProductView />} />
         <Route path="/cart" element={ <CartView />} />
-       
-      
-        
         <Route path="/search" element={ <CardView />} />
         <Route path="/event" element={ <EventView />} />
         <Route path="/login" element={ <LoginView /> } />
