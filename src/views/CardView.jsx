@@ -8,7 +8,6 @@ import CardSearch from '@/components/card/CardSearch';
 const CardViewBlock = styled.div`
 display: flex;
 flex-direction: column;
-align-items: center;
 `
 const CardView = () => {
 

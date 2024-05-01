@@ -65,7 +65,7 @@ const BoardWrite = ({type}) => {
                             </td>
                         </tr>
                         <tr>
-                            <td>제목</td>
+                            <td>이름</td>
                             <td>
                                 <input type="text" name="subject" value={board.subject} onChange={handleChange} />
                             </td>

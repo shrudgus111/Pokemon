@@ -3,8 +3,8 @@ import styled from 'styled-components'
 import CardSection from '@/components/home/CardSection';
 import NewsSection from '@/components/home/NewsSection';
 import Grid from '@/components/home/Grid';
-import Scact from '@/components/home/Scact';
-import SliderSection2 from '@/components/home/SliderSection';
+// import Scact from '@/components/home/Scact';
+import SliderSection2 from '@/components/home/SliderSection2';
 
 const HomeViewBlock = styled.div``
 
@@ -13,7 +13,7 @@ const HomeView = () => {
         <HomeViewBlock>
             <CardSection />
             <Grid />
-            <Scact />
+            {/* <Scact /> */}
             <NewsSection />
             <SliderSection2/>
         </HomeViewBlock>

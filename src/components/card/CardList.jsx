@@ -39,7 +39,7 @@ padding: 50px 0 130px;
     }
   }
   &:hover {
-    z-index: 2; /* 호버 시 z-index 값을 높여 맨 위로 올립니다. */
+    z-index: 9999;
   }
 }
 .no_result {
