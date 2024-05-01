@@ -4,7 +4,7 @@ import CardSection from '@/components/home/CardSection';
 import NewsSection from '@/components/home/NewsSection';
 import Grid from '@/components/home/Grid';
 import Scact from '@/components/home/Scact'
-import SliderSection2 from '@/components/home/SliderSection';
+import SliderSection2 from '@/components/home/SliderSection2';
 
 const HomeViewBlock = styled.div``
 
