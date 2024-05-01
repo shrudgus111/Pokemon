@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 const FooterBlock = styled.div`
     background: #000;
     color: #fff;
-    padding:20px 0 80px 0;
+    padding:20px 0 3px 0;
    
    
   
@@ -65,17 +65,40 @@ const FooterBlock = styled.div`
                  margin:0 7px;
             }
         }
+        
+        
     }
+}
 
+.footer__lo{
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    background: #000;
+    text-align:center;
+    width:100%;
+    
+ .hb{
+ img{
+    margin:60px 0;
+    width:100%;
+    background:#fff;
+    border-radius:15px;
+    padding:0px 2px 7px 2px;
+ }
 
+ }
 
-
+}
+   
+ 
     }
 `
 
 const Footer = () => {
     return (
         <FooterBlock>
+            
        
             <div className="footer__nav">
             <div className="logo"><img src="./assets/image/ft_logo.png" alt="" /></div>
@@ -97,14 +120,23 @@ const Footer = () => {
                 </div>
                 <div className="sns">
                     <ul className='sn2'>
-                        <li><img src="./assets/image/icon_faceb.png" alt="" /></li>
-                        <li><img src="./assets/image/icon_insta.png" alt="" /></li>
-                        <li><img src="./assets/image/icon_youtube.png" alt="" /></li>
-                        <li><img src="./assets/image/icon_pokemon.png" alt="" /></li>
+                        <li><a href='/'><img src="./assets/image/icon_faceb.png" alt="" /></a></li>
+                        <li><a href='/'><img src="./assets/image/icon_insta.png" alt="" /></a></li>
+                        <li><a href='/'><img src="./assets/image/icon_youtube.png" alt="" /></a></li>
+                        <li><a href='/'><img src="./assets/image/icon_pokemon.png" alt="" /></a></li>
                     </ul>
                 </div>
               
             </div>
+
+            <div className="footer__lo">
+                <div className="hb">
+                <img src="./assets/image/fo-logo.png" alt="" />
+                </div>
+             
+              
+            </div>
+          
         </FooterBlock>
     );
 };

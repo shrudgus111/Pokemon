@@ -8,6 +8,8 @@ import { userLogout, userLogin } from '@/store/member'
 import { FaUsers } from "react-icons/fa";
 import { FaUserCheck } from "react-icons/fa";
 import { MdOutlineCatchingPokemon } from "react-icons/md";
+import { FaUserTimes } from "react-icons/fa";
+import { FaUserEdit } from "react-icons/fa";
 
 const HeaderBlock = styled.div`
   .header__wrap{
@@ -147,8 +149,8 @@ const Header = () => {
               </nav>
               { user ?
                 <div className="member">
-                  <a href="#" onClick={ handleLogout }>로그아웃</a>
-                  <Link to="/memberModify">정보수정({user.userId})</Link>
+                  <a href="#" onClick={ handleLogout }><FaUserTimes /></a>
+                  <Link to="/memberModify"><FaUserEdit /></Link>
                 </div>
                 :
                 <div className="member">
