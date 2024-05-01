@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'; // React Router의 Link 추가
 
 const ApplicationSectionBlock = styled.div`
     h3 {
@@ -12,7 +13,8 @@ const ApplicationSectionBlock = styled.div`
           display: flex;
           justify-content: center;
           border-bottom:1px solid #000;
-          button {
+          a {
+            text-align: center;
             width:300px;
             font-size:25px;
             margin:0 100px;
@@ -102,6 +104,10 @@ const ApplicationSection = () => {
        
     ]
 
+    const handleClick = (id) => {
+        setActive(id);
+    };
+
     const applicationData = {
         0 : [ 
           { applicationImg: './assets/image/app_logo.png',  link: '#' },
@@ -126,9 +132,16 @@ const ApplicationSection = () => {
             {/* <h3>{ applicationMenu[active].menu }</h3> */}
             <div className="application__wrap">
                 <div className="application__type">
-                    {
-                        applicationMenu.map((item, index)=><button key={index} onClick={()=>{setActive(item.id)}} className={ active===item.id && 'on' }>{item.menu}</button>)
-                    }
+                {applicationMenu.map((item) => (
+                    <Link
+                    key={item.id}
+                    to={item.id === 0 ? '/application' : '/boardList'}
+                    className={active === item.id ? 'on' : ''} // active 상태 확인하여 'on' 클래스 추가
+                    onClick={() => handleClick(item.id)}
+                >
+                    {item.menu}
+                </Link>
+                    ))}
                 </div>
                 <div className="application__member">
                     {

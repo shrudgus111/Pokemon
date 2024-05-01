@@ -8,6 +8,8 @@ import { userLogout, userLogin } from '@/store/member'
 import { FaUsers } from "react-icons/fa";
 import { FaUserCheck } from "react-icons/fa";
 import { MdOutlineCatchingPokemon } from "react-icons/md";
+import { FaUserTimes } from "react-icons/fa";
+import { FaUserEdit } from "react-icons/fa";
 
 const HeaderBlock = styled.div`
   .header__wrap{
@@ -43,10 +45,27 @@ const HeaderBlock = styled.div`
              height:120px;
             line-height:120px;
             padding:0 10px;
-          &:hover, &:nth-child(1).active { color: #fff;
-          background:#f00;
-         }
+        
         }
+        &:nth-child(1) a:hover, a.active  {
+          background:#ff5d0e  /* 새소식 링크에 대한 호버 시 배경색 변경 */
+        }
+        &:nth-child(2) a:hover, a.active   {
+          background: #ffa70e /* 제품정보 링크에 대한 호버 시 배경색 변경 */
+        }
+        &:nth-child(3) a:hover, a.active   {
+          background: #ffcb06 /* 제품정보 링크에 대한 호버 시 배경색 변경 */
+        }
+        &:nth-child(4) a:hover, a.active  {
+          background: #04a6e2 /* 제품정보 링크에 대한 호버 시 배경색 변경 */
+        }
+        &:nth-child(5) a:hover, a.active   {
+          background: #9b43ff /* 제품정보 링크에 대한 호버 시 배경색 변경 */
+        }
+        &:nth-child(6) a:hover, a.active   {
+          background: #eb3690  /* 제품정보 링크에 대한 호버 시 배경색 변경 */
+        }
+        
       }
     }
     .closeNav { display: none; }
@@ -57,9 +76,10 @@ const HeaderBlock = styled.div`
 const ItemCount = styled.div`
   position: fixed;
   right:60px;
-  bottom:100px;
+  bottom:190px;
   background:yellow;
   border-radius: 20%;
+  z-index:9999999999999999999999;
 
   
   span {
@@ -129,8 +149,8 @@ const Header = () => {
               </nav>
               { user ?
                 <div className="member">
-                  <a href="#" onClick={ handleLogout }>로그아웃</a>
-                  <Link to="/memberModify">정보수정({user.userId})</Link>
+                  <a href="#" onClick={ handleLogout }><FaUserTimes /></a>
+                  <Link to="/memberModify"><FaUserEdit /></Link>
                 </div>
                 :
                 <div className="member">
