@@ -3,11 +3,10 @@ import styled from 'styled-components';
 import { useDispatch } from 'react-redux'
 import { getName } from '@/store/card'
 const CardSearchBlock = styled.div`
-
-margin: 100px 0;
+margin: 50px auto;
 .search_wrap{
     display: flex;
-    align-items: center;
+    justify-content: center;
     input{
         width: 50rem;
         height: 40px;
