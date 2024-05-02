@@ -16,6 +16,9 @@ padding: 50px 0 130px;
         .news {
             flex: 0 0 25%;
             padding: 10px; 10px;
+            @media (max-width: 993px) {
+                flex: 0 0 50%;
+              }
             .newsWrap {
                 display: flex;
                 flex-direction: column;
@@ -31,7 +34,6 @@ padding: 50px 0 130px;
                     position: relative;
                     img{
                         width: 100%;
-                        height: 19.2vh;
                     }
                     .badge{
                         position: absolute;
@@ -49,6 +51,7 @@ padding: 50px 0 130px;
                     padding: 20px;
                     border-bottom: 4px solid #0080FF;
                     position: relative;
+                    font-weight: 500;
                     
                     h3 {
                         font-size: 20px;

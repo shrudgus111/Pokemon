@@ -13,63 +13,79 @@ import { FaUserEdit } from "react-icons/fa";
 
 const HeaderBlock = styled.div`
   .header__wrap{
+  height: 120px;
   padding:0 20px;
   background: #fff;
   position: relative;
   display:flex;
   justify-content: space-between;
   align-items:center;
-
- .member{
-  display:flex;
-  justify-content: space-between;
-  align-items:center;
-  font-size:40px;
-  margin:0 10px;
- color:#2da5da;
-
-  a{
-    margin: 0 10px;
-  }
-  
-  
- }
- 
-
-  #header__nav { 
-    ul {
-      display: flex;
+    h1 {
+      width: 17%;
+      display:flex;
       justify-content: center;
-      li { margin: 10px 10px; font-size: 20px; 
-        a { transition: all 0.5s;
-             height:120px;
-            line-height:120px;
-            padding:0 10px;
-        
+    }
+    #header__nav { 
+      width: 1250px;
+      ul {
+        display: flex;
+        justify-content: center;
+        height: 120px;
+        li { 
+          font-size: 20px;
+          padding: 0 20px;
+          display:flex;
+          align-items: center;
+          transition: all 0.5s;
+          font-weight: 500;
+          &:nth-child(1):hover {
+            background: #ff5d0e;
+            color: #fff;
+          }
+          &:nth-child(2):hover  {
+            background: #ffa70e;
+            color: #fff;
+          }
+          &:nth-child(3):hover {
+            background: #ffcb06;
+            color: #fff;
+          }
+          &:nth-child(4):hover {
+            background: #04a6e2;
+            color: #fff;
+          }
+          &:nth-child(5):hover {
+            background: #9b43ff;
+            color: #fff;
+          }
+          &:nth-child(6):hover {
+            background: #eb3690;
+            color: #fff;
+          }
+          a {
+            height: 120px;
+            display: flex;
+            align-items: center;
+          }
         }
-        &:nth-child(1) a:hover, a.active  {
-          background:#ff5d0e  /* 새소식 링크에 대한 호버 시 배경색 변경 */
-        }
-        &:nth-child(2) a:hover, a.active   {
-          background: #ffa70e /* 제품정보 링크에 대한 호버 시 배경색 변경 */
-        }
-        &:nth-child(3) a:hover, a.active   {
-          background: #ffcb06 /* 제품정보 링크에 대한 호버 시 배경색 변경 */
-        }
-        &:nth-child(4) a:hover, a.active  {
-          background: #04a6e2 /* 제품정보 링크에 대한 호버 시 배경색 변경 */
-        }
-        &:nth-child(5) a:hover, a.active   {
-          background: #9b43ff /* 제품정보 링크에 대한 호버 시 배경색 변경 */
-        }
-        &:nth-child(6) a:hover, a.active   {
-          background: #eb3690  /* 제품정보 링크에 대한 호버 시 배경색 변경 */
-        }
-        
       }
     }
     .closeNav { display: none; }
   }
+  .member{
+    width: 17%;
+    display:flex;
+    align-items:center;
+    font-size:40px;
+    margin:0 10px;
+   color:#2da5da;
+  
+    a{
+      margin: 0 10px;
+    }
+    
+    
+   }
 }
 `
 
@@ -97,6 +113,9 @@ const ItemCount = styled.div`
     font-weight: bold;
   }
 `
+const Toggle = styled.div`
+
+`
 
 const Header = () => {
     const dispatch = useDispatch()
@@ -122,9 +141,7 @@ const Header = () => {
            <div className='header__wrap'>
               <h1 className="header__logo">
                   <Link to="/"><img src="./assets/image/card_main_logo.png" alt="" /></Link>
-              </h1>
-             
-            
+              </h1>            
               <nav id="header__nav">
                   <ul>
                       <li>
@@ -160,12 +177,16 @@ const Header = () => {
               }
            </div>
 
-<ItemCount>
+            <ItemCount>
               <Link to="/cart">
                 <img src="./assets/image/cart.png" alt="" />
                 <span>{ carts.length }</span> 
               </Link>
             </ItemCount>
+
+            <Toggle>
+              
+            </Toggle>
         </HeaderBlock>
     );
 };

@@ -12,7 +12,11 @@ button, input[type=button], input[type=submit] { cursor:pointer }
 fieldset { border:none }
 legend { display:none }
 .blind { position:absolute; width:1px; height:1px; overflow:hidden; text-indent:-99999px;}
-
+body {
+    font-family: 'Noto Sans', 'Noto Sans KR';
+    word-break: keep-all;
+    letter-spacing: -0.4px;
+  }
 
 .row { max-width:1200px; margin:auto }
 

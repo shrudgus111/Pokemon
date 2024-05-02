@@ -15,15 +15,24 @@ const rotateAnimation = keyframes`
 
 const CardListBlock = styled.div`
 max-width: 1200px;
-margin: auto;
+margin: 0 auto;
 display: flex;
 flex-wrap: wrap;
 padding: 50px 0 130px;
 .card {
-  width: 18.3%;
+  display: flex;
+  justify-content: center;
+  flex: 1 1 18.3%;
+  width: 220px;
+  heigh6: 306px;
   max-width: 60%;
   margin: 10px;
   position: relative;
+  @media (max-width: 993px){
+    flex: 0 0 45%;
+    width: 100%;
+    height: 100%;
+  }
   a {
     perspective: 1000px;
     img {

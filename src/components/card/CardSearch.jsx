@@ -3,23 +3,38 @@ import styled from 'styled-components';
 import { useDispatch } from 'react-redux'
 import { getName } from '@/store/card'
 const CardSearchBlock = styled.div`
-margin: 50px auto;
+background: url("/src/assets/image/cards-bg.jpg");
+padding: 50px 0;
 .search_wrap{
+    margin: 0 auto;
+    max-width: 1200px;
     display: flex;
     justify-content: center;
-    input{
-        width: 50rem;
+    height: 50px;
+    @media(max-width:993px){
         height: 40px;
-        border: 5px solid #000;
+        padding: 0 20px;
     }
-    span{
-        button{
-            width: 50px;
+    input{
+        width: 100%;
+        border: 5px solid #484848;
+        padding-left: 20px;
+        outline: none;
+    }::placeholder {
+        font-size: 15px;
+        font-family: "Noto Sans", "Noto Sans KR";
+        font-weight: 400;
+        color: #B7B8B7;
+    }
+     button{
+        border: 5px solid #484848;
+        color: #fff;
+        background: #484848;
+        font-size: 15px;
+        padding: 10px 12px;
+        @media(max-width:993px){
             height: 40px;
-            border: 5px solid #000;
-            color: #fff;
-            background: #000;
-            font-size: 15px;
+            padding: 0;
         }
     }
 }
