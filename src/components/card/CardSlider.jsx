@@ -104,6 +104,15 @@ const ModalImage = styled.img`
 `;
 
 const CardSlider = () => {
+  const [rotation, setRotation] = useState({ rotateX: 0, rotateY: 0 });
+
+  function handleMouseMove(e) {
+    const x = e.nativeEvent.offsetX;
+    const y = e.nativeEvent.offsetY;
+    const rotateY = (-1 / 5) * x + 43;
+    const rotateX = (4 / 30) * y - 43;
+    setRotation({ rotateX, rotateY });
+  }
   const series = useSelector(state => state.card.series);
   const defaultSeries = 'old';
   const sliderList = series ? card.filter(item => item.series === series) : card.filter(item => item.series === defaultSeries);
@@ -161,8 +170,8 @@ const CardSlider = () => {
         ))}
       </Slider>
       {modalOpen && (
-        <ModalOverlay onClick={closeModal}>
-          <ModalWrapper onClick={(e) => e.stopPropagation()}>
+        <ModalOverlay>
+          <ModalWrapper onClick={closeModal} onMouseMove={handleMouseMove}  style={{ transform: `perspective(350px) rotateX(${rotation.rotateX}deg) rotateY(${rotation.rotateY}deg)` }}>
             <ModalImage src={selectedCard.img} alt={selectedCard.name} />
           </ModalWrapper>
         </ModalOverlay>

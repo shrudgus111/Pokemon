@@ -25,7 +25,7 @@ const CardLatestBlock = styled.div`
             flex-direction: column;
             align-items: center;
             position: relative;
-            width:322px;
+            width: 30%;
             z-index: 2;
             img{
                 width: 100%;
