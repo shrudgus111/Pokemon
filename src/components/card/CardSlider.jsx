@@ -4,7 +4,7 @@ import Slider from "react-slick";
 import card from '/src/assets/data/card'
 import { useSelector} from 'react-redux'
 import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
+// import 'slick-carousel/slick/slick-theme.css';
 import prevArrowImg from '/src/assets/image/swiper_prev_dark.png';
 import nextArrowImg from '/src/assets/image/swiper_next_dark.png';
 

@@ -43,9 +43,13 @@ h3 {
      
        
           a { display: block;
+            cursor: default; /* 원하는 마우스 커서 스타일로 변경하세요 */
+              
             .member__photo { 
                   border:1px solid #34b1c4;
                   margin:50px 0;
+
+               
                 img { width: 32%;
                     margin:30px auto; }
                     .tit{    font-size:20px;
@@ -64,31 +68,74 @@ h3 {
                           
 
                     }
-                    .pt1{    
-                           margin:10px 0 40px 0;
-
-                          
-
-                    }
-                    .pt2{    
-                           margin:10px 0 40px 0;
-
-                          
-
-                    }
-                    .pt3{    
-                           margin:10px 0 40px 0;
-
-                          
-
-                    }
-                    .pt4{   
-                           margin:10px 0 40px 0;
-                           padding-bottom:40px;
-
-                          
-
-                    }
+                    .pt1 {
+                        margin: 10px auto; /* 이 부분을 수정하여 가운데 정렬 */
+                        width: 70%;
+                        text-align: center;
+                        height: 0;
+                        padding-bottom: 56.25%;
+                        position: relative;
+                        iframe {
+                          position: absolute;
+                          width: 100%;
+                          height: 90%;
+                          top:0;
+                          left:0;
+                          text-align: center;
+                          margin: 0 auto; /* 이 부분을 수정하여 가운데 정렬 */
+                        }
+                      }
+                      .pt2 {
+                        margin: 10px auto; /* 이 부분을 수정하여 가운데 정렬 */
+                        width: 70%;
+                        text-align: center;
+                        height: 0;
+                        padding-bottom: 56.25%;
+                        position: relative;
+                        iframe {
+                          position: absolute;
+                          width: 100%;
+                          height: 90%;
+                          top:0;
+                          left:0;
+                          text-align: center;
+                          margin: 0 auto; /* 이 부분을 수정하여 가운데 정렬 */
+                        }
+                      }
+                      .pt3 {
+                        margin: 10px auto; /* 이 부분을 수정하여 가운데 정렬 */
+                        width: 70%;
+                        text-align: center;
+                        height: 0;
+                        padding-bottom: 56.25%;
+                        position: relative;
+                        iframe {
+                          position: absolute;
+                          width: 100%;
+                          height: 90%;
+                          top:0;
+                          left:0;
+                          text-align: center;
+                          margin: 0 auto; /* 이 부분을 수정하여 가운데 정렬 */
+                        }
+                      }
+                      .pt4 {
+                        margin: 10px auto; /* 이 부분을 수정하여 가운데 정렬 */
+                        width: 70%;
+                        text-align: center;
+                        height: 0;
+                        padding-bottom: 56.25%;
+                        position: relative;
+                        iframe {
+                          position: absolute;
+                          width: 100%;
+                          height: 90%;
+                          top:0;
+                          left:0;
+                          text-align: center;
+                          margin: 0 auto; /* 이 부분을 수정하여 가운데 정렬 */
+                        }
+                      }
                     .lang
                     img{
                         width:52%;
@@ -145,7 +192,7 @@ const PlaySection = () => {
                                         <p>{item.title} </p>
                                         <div className="tit">포켓몬 카드 게임의 기본 룰을 알기 쉽게 알려주는</div>
                                         <div className="tit2">「포켓몬 카드 게임 놀이방법 영상」과 함께 포켓몬 카드 게임을 알아보아요! </div>
-<div className="pt1"><iframe width="70%" height="515" src="https://www.youtube.com/embed/OdR51NdHt5g?si=a4yi4k5ONVK2Df6n" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<div className="pt1"><iframe width="100%" height="515" src="https://www.youtube.com/embed/OdR51NdHt5g?si=a4yi4k5ONVK2Df6n" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
 <div className="pt2"><iframe width="70%" height="515" src="https://www.youtube.com/embed/vJoCo_2UeNI?si=KNlws8ZktyDwD6Ll" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
 <div className="pt3"><iframe width="70%" height="515" src="https://www.youtube.com/embed/yKie0cPHyVQ?si=mTlXEWLnc233ElSk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>

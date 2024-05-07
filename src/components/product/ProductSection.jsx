@@ -9,6 +9,7 @@ import { RiShoppingBag3Fill } from "react-icons/ri";
 
 
 const ProductSectionBlock = styled.div`
+margin-bottom:90px;
   .info p {
     font-size: 17px;
     font-weight: 800;
@@ -128,6 +129,16 @@ const ListBlock = styled.li`
   overflow: hidden;
   border-radius: 10px;
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3); /* 그림자 효과 추가 */
+
+  @media (max-width:768px) {
+    flex: 0 0 45%;
+    margin: 20px 2%;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3); /* 그림자 효과 추가 */
+}
 
   .photo {
     cursor: pointer;
@@ -256,7 +267,11 @@ const closeModal = () => {
                     {item.inventory !== cartIdCount(item.id) ? <span>{item.inventory - cartIdCount(item.id)}개 남았습니다!!!!!</span> : <span>품절!!</span>}
                   </div>
                    <ul className='tx'>
-                     <li><b>발매일</b> 2024-03-06                                    </li>                                                                    <li><b>가격</b> 1,000원(1팩), 30,000원(1상자)                                    </li>                                                                    <li><b>구성물</b> 1팩 : 5장 / 1상자 : 30팩 (카드 150장)                                    </li>                                                                    <li><b>주의</b> *한 팩에는 무작위로 5장의 카드가 들어 있으며, 제품의 특성상 동일한 카드가 연속하여 나오거나, 전 종의 카드를 모으기 어려운 경우가 있습니다. *점포에 따라 1상자(30팩) 단위로 판매하는 곳도 있습니다.                                    </li>                            </ul>
+                     <li><b>발매일</b> 2024-03-06 </li>
+                     <li><b>가격</b> 1,000원(1팩), 30,000원(1상자) </li> 
+                     <li><b>구성물</b> 1팩 : 5장 / 1상자 : 30팩 (카드 150장)</li>
+                     <li><b>주의</b> *한 팩에는 무작위로 5장의 카드가 들어 있으며, 제품의 특성상 동일한 카드가 연속하여 나오거나, 전 종의 카드를 모으기 어려운 경우가 있습니다. *점포에 따라 1상자(30팩) 단위로 판매하는 곳도 있습니다. </li>
+                     </ul>
              </div>
          </div>
           {/* Add more details or customizations as needed */}

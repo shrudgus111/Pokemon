@@ -13,6 +13,7 @@ const ApplicationSectionBlock = styled.div`
           display: flex;
           justify-content: center;
           border-bottom:1px solid #000;
+          li{ list-style:none;
           a {
             text-align: center;
             width:300px;
@@ -21,7 +22,7 @@ const ApplicationSectionBlock = styled.div`
             padding-bottom: 15px;
           
             background:#fff;
-            border-bottom:1px solid #000;
+            border-bottom:0px solid #000;
             &.on {
                 background:#fff;
                 color:#ffa70e;
@@ -29,6 +30,7 @@ const ApplicationSectionBlock = styled.div`
                 font-weight:700;
             }
           }
+        }
         }
         .application__member {
             text-align: center;
@@ -38,6 +40,7 @@ const ApplicationSectionBlock = styled.div`
          
            
               a { display: block;
+                cursor: default; /* 원하는 마우스 커서 스타일로 변경하세요 */
                 .member__photo { 
                    
                     img { width: 32%;
@@ -81,6 +84,12 @@ const ApplicationSectionBlock = styled.div`
                                }
 
                         }
+                        .tit3 a{
+                            cursor:pointer;
+                        }
+                        .tit4 a{
+                            cursor:pointer;
+                        }
                         .lang
                         img{
                             width:52%;
@@ -89,6 +98,109 @@ const ApplicationSectionBlock = styled.div`
                      }
               }
             }
+        }
+
+
+        @media (max-width:768px) {
+         
+            
+            h3 {
+                text-align: center;
+                font-size: 20px;
+                margin: 50px 0;
+            }
+            .application__wrap {
+                .application__type {
+                  display: flex;
+                  justify-content: center;
+                  border-bottom:1px solid #000;
+                  li{list-style:none;
+                    width:49%;
+                    
+                  a {
+               
+                    width:95%;
+                    font-size:25px;
+                    margin:0 5px;
+                    padding-bottom: 10px;
+                  
+                    background:#fff;
+                    border-bottom:0px solid #000;
+                    &.on {
+                        background:#fff;
+                        color:#ffa70e;
+                        border-bottom:5px solid #ffa70e;
+                        font-weight:700;
+                       
+                    }
+                }
+                  }
+                }
+                .application__member {
+                    text-align: center;
+                
+                   
+                    .member__info {
+                 
+                   
+                      a { display: block;
+                        .member__photo { 
+                           
+                            img { width: 32%;
+                                margin:30px auto; }
+                                .tit{    font-size:30px;
+                                    font-weight:500;
+                                       color:#000;
+                                       margin:30px 0;
+                                       padding:0 6px;
+        
+                                       .t1{
+                                        background-color: rgb(255, 198, 156);
+                                        color:#000;
+                                        font-weight:800;
+                                       }
+                                       .t2{
+                                        background-color: rgb(255, 231, 206);
+                                        color:#000;
+                                        font-weight:800;
+                                       }
+        
+                                }
+                                .tit2{    font-size:18px;
+                                    font-weight:500;
+                                       color:#000;
+                                       margin:40px 0;
+                                       padding:0 10px;
+        
+                                       .t1{
+                                        background-color: rgb(247, 198, 206);
+                                        color:#000;
+                                        font-weight:800;
+                                       }
+                                       .t2{
+                                        background-color: rgb(255, 239, 198);
+                                        color:#000;
+                                        font-weight:800;
+                                       }
+                                       .t3{
+                                        background-color: rgb(214, 239, 214);
+                                        color:#000;
+                                        font-weight:800;
+                                       }
+        
+                                }
+                                .lang
+                                img{
+                                    width:80%;
+                                    }
+                                }
+                             }
+                      }
+                    }
+                }
+        
+
+            
         }
     }
 `
@@ -133,14 +245,16 @@ const ApplicationSection = () => {
             <div className="application__wrap">
                 <div className="application__type">
                 {applicationMenu.map((item) => (
-                    <Link
-                    key={item.id}
-                    to={item.id === 0 ? '/application' : '/boardList'}
-                    className={active === item.id ? 'on' : ''} // active 상태 확인하여 'on' 클래스 추가
-                    onClick={() => handleClick(item.id)}
-                >
-                    {item.menu}
-                </Link>
+                  <li>
+                        <Link
+                        key={item.id}
+                        to={item.id === 0 ? '/application' : '/boardList'}
+                        className={active === item.id ? 'on' : ''} // active 상태 확인하여 'on' 클래스 추가
+                        onClick={() => handleClick(item.id)}
+                    >
+                        {item.menu}
+                    </Link>
+                  </li>
                     ))}
                 </div>
                 <div className="application__member">
@@ -163,9 +277,9 @@ const ApplicationSection = () => {
 포켓몬 월드챔피언십에 진출할 수 있는 특별한  <span className='t3'>코리안리그 포인트(KP)</span> 도 있습니다. </div>
 <div className="pt1"><img src="./assets/image/app_logo2.png" alt="" />
 </div>
-<div className="tit3">[포켓몬 월드챔피언십2019 바로가기]</div>
+<div className="tit3"><a href='/'>[포켓몬 월드챔피언십2019 바로가기]</a></div>
 <div className="pt2"><img src="./assets/image/app_logo3.png" alt="" /></div>
-<div className="tit4">[포켓몬 월드챔피언십2019 바로가기]</div>
+<div className="tit4"><a href='/'>[포켓몬 월드챔피언십2019 바로가기]</a></div>
 <div className="lang"><img src="./assets/image/app_txt.png" alt="" /></div>
 
 

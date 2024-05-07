@@ -18,9 +18,19 @@ const FooterBlock = styled.div`
         a { margin-right: 17px; }
 
         .na{
-          span{
-            margin-left: 17px; 
-          }
+            span {
+                position: relative;
+                margin-left: 14px;
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: 5px;
+                    left: 1px;
+                    width: 1px;
+                    height: 14px;
+                    background: #fff;
+                }
+            }
         }
 
         .logo{
@@ -40,19 +50,7 @@ const FooterBlock = styled.div`
             p{
                 margin:4px 0;
             }
-        span {
-            position: relative;
-            margin-left: 14px;
-            &::before {
-                content: '';
-                position: absolute;
-                top: 5px;
-                left: -10px;
-                width: 1px;
-                height: 14px;
-                background: #fff;
-            }
-        }
+      
     }
 
     .sns{
@@ -90,9 +88,122 @@ const FooterBlock = styled.div`
  }
 
 }
+
+@media (max-width:768px) {
+
+    background: #000;
+    color: #fff;
+    padding:20px 0 3px 0;
+   
+   
+  
+    .footer__nav {
+       display:block;
+       justify-content: space-between;
+         padding: 50px;
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+        a { margin-right: 17px; }
+
+        .na{  text-align:center;
+            margin-top:30px;
+           a{
+           
+            display: inline-block;
+            border: 1px solid #ddd;
+             margin:5px 3px;
+            width: 45%;
+          padding:10px 1px;
+          text-align:center;
+
+          
+           }
+           span {
+            margin-left: 0px;
+            display: block;
+            &::before {
+              display: none;
+            }
+          }
+        }
+
+        .logo{
+            text-align:center;
+            display:block;
+            left:0;
+           
+        }
+    }
+    .footer__info {
+        display:block;
+        text-align:center;
+        justify-content: space-between;
+        align-items:center;
+        background: #1a1a1a;
+        width:100%;
+        padding:50px 46px;
+        .hc{
+            p{
+                margin:4px 0;
+            }
+        span {
+            position: relative;
+            margin-left: 14px;
+            &::before {
+                content: '';
+                position: absolute;
+                top: 5px;
+                left: -10px;
+                width: 1px;
+                height: 14px;
+                background: #fff;
+            }
+        }
+    }
+
+    .sns{  display:block;
+             margin-top:30px;
+        .sn2{
+            display:flex;
+            justify-content: center;
+            align-items:center;
+
+            li{
+                 margin:0 7px;
+            }
+        }
+        
+        
+    }
+}
+
+.footer__lo{
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    background: #000;
+    text-align:center;
+    width:100%;
+    
+ .hb{
+ img{
+    margin:60px 0;
+    width:100%;
+    background:#fff;
+    border-radius:15px;
+    padding:0px 2px 7px 2px;
+ }
+
+ }
+
+}   
+      
+}
    
  
     }
+
+    
 `
 
 const Footer = () => {
@@ -103,12 +214,12 @@ const Footer = () => {
             <div className="footer__nav">
             <div className="logo"><img src="./assets/image/ft_logo.png" alt="" /></div>
               <div className='na'>
-                    <Link to="/">회사소개 <span>|</span></Link>
-                    <a href="#">사업내용 <span>|</span></a>
-                    <a href="#">제휴안내 <span>|</span></a>
-                    <a href="http://www.naver.com" target="_blank">이용약관 <span>|</span></a>
-                    <Link to="/">개인정보처리방침 <span>|</span></Link>
-                    <a href="#">이메일무단수집거부 <span>|</span></a>
+                    <Link to="/">회사소개 <span></span></Link>
+                    <a href="#">사업내용 <span></span></a>
+                    <a href="#">제휴안내 <span></span></a>
+                    <a href="http://www.naver.com" target="_blank">이용약관 <span></span></a>
+                    <Link to="/">개인정보처리방침 <span></span></Link>
+                    <a href="#">이메일무단수집거부 <span></span></a>
                     <a href="#">고객센터</a>
               </div>
             </div>

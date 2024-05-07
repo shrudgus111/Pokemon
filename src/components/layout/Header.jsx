@@ -40,7 +40,7 @@ const HeaderBlock = styled.div`
     ul {
       display: flex;
       justify-content: center;
-      li { margin: 10px 10px; font-size: 20px; 
+      li { margin: 0 5px; font-size: 20px; font-weight:600;
         a { transition: all 0.5s;
              height:120px;
             line-height:120px;
@@ -48,22 +48,28 @@ const HeaderBlock = styled.div`
         
         }
         &:nth-child(1) a:hover, a.active  {
-          background:#ff5d0e  /* 새소식 링크에 대한 호버 시 배경색 변경 */
+          background:#ff5d0e;  /* 새소식 링크에 대한 호버 시 배경색 변경 */
+          color:#fff;
         }
         &:nth-child(2) a:hover, a.active   {
-          background: #ffa70e /* 제품정보 링크에 대한 호버 시 배경색 변경 */
+          background: #ffa70e; /* 제품정보 링크에 대한 호버 시 배경색 변경 */
+          color:#fff;
         }
         &:nth-child(3) a:hover, a.active   {
-          background: #ffcb06 /* 제품정보 링크에 대한 호버 시 배경색 변경 */
+          background: #ffcb06; /* 제품정보 링크에 대한 호버 시 배경색 변경 */
+          color:#fff;
         }
         &:nth-child(4) a:hover, a.active  {
-          background: #04a6e2 /* 제품정보 링크에 대한 호버 시 배경색 변경 */
+          background: #04a6e2; /* 제품정보 링크에 대한 호버 시 배경색 변경 */
+          color:#fff;
         }
         &:nth-child(5) a:hover, a.active   {
-          background: #9b43ff /* 제품정보 링크에 대한 호버 시 배경색 변경 */
+          background: #9b43ff; /* 제품정보 링크에 대한 호버 시 배경색 변경 */
+          color:#fff;
         }
         &:nth-child(6) a:hover, a.active   {
-          background: #eb3690  /* 제품정보 링크에 대한 호버 시 배경색 변경 */
+          background: #eb3690;  /* 제품정보 링크에 대한 호버 시 배경색 변경 */
+          color:#fff;
         }
         
       }

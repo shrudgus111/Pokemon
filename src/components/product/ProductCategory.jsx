@@ -5,20 +5,51 @@ const ProductCategoryBlock = styled.div`
     display: flex;
     justify-content: center;
     border-bottom:1px solid #000;
+    
+    li{
+        list-style:none;
+        width:33.33%;
     button {
-        width:300px;
+        width:100%;
         font-size:25px;
-        margin:0 100px;
+       
         padding-bottom: 15px;
       
         background:#fff;
-        border-bottom:1px solid #000;
+
+      
+        
         &.on {
             background:#fff;
             color:#ffa70e;
             border-bottom:5px solid #ffa70e;
             font-weight:700;
         }
+    }
+        @media (max-width:768px) {
+            display: flex;
+            justify-content: center;
+            border-bottom:1px solid #000;
+            li{
+                list-style:none;
+                width:33.33%;
+            button {
+                width:300px;
+                font-size:25px;
+                margin:0 10px;
+                padding-bottom: 15px;
+              
+                background:#fff;
+                
+                &.on {
+                    background:#fff;
+                    color:#ffa70e;
+                    border-bottom:5px solid #ffa70e;
+                    font-weight:700;
+                }
+            }
+        }
+        
       }
 `
 
@@ -28,7 +59,7 @@ const ProductCategory = ({changeTitle, title}) => {
         <ProductCategoryBlock className='row'>
             {
                 category.map((item, index)=>(
-                    <button key={index} type="button" onClick={()=>changeTitle(item)} className={ title==item && "on" }>{item}</button>
+                    <li><button key={index} type="button" onClick={()=>changeTitle(item)} className={ title==item && "on" }>{item}</button></li>
                 ))
             }
         </ProductCategoryBlock>

@@ -4,6 +4,7 @@ import {useSelector, useDispatch } from 'react-redux'
 import { qtyUpdate, removeCartItem } from '@/store/product'
 
 const TableBlock = styled.table`
+// table-layout: fixed;
 background: linear-gradient(to bottom, #FFDE00, #FFAC00); /* 그라데이션 배경 추가 */
 border: 2px solid #FFAC00; /* 실선 테두리 추가 */
   border-radius: 15px; /* 둥근 테두리 적용 */
@@ -54,6 +55,66 @@ th,
   &:hover {
     transform: scale(1.05); /* 호버 시 크기 확대 효과 추가 */
   }
+
+
+  @media (max-width:768px) {
+    width:100%;
+    table-layout: auto; 
+    background: linear-gradient(to bottom, #FFDE00, #FFAC00); /* 그라데이션 배경 추가 */
+    border: 2px solid #FFAC00; /* 실선 테두리 추가 */
+      border-radius: 15px; /* 둥근 테두리 적용 */
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5); /* 그림자 효과 추가 */
+    transition: transform 0.3s ease; /* 변형에 대한 애니메이션 추가 */
+    color: #000; /* 글꼴 색상 변경 */
+    font-family: 'Arial', sans-serif; /* 글꼴 변경 */
+    cursor: pointer; /* 마우스 커서 변경 */
+    transition: transform 0.3s ease; /* 변형에 대한 애니메이션 추가 */
+    col:nth-child(1) { width: 100px; }
+    col:nth-child(2) { width: auto; }
+    col:nth-child(3) { width: 100px; }
+    col:nth-child(4) { width: 100px; }
+    col:nth-child(5) { width: 100px; }
+    th,
+      td {
+        padding: 7px;
+      }
+      tbody {
+        width:100%;
+        td:nth-child(3) {
+          text-align: center;
+          input {
+            border: 1px solid #000;
+            text-align: center;
+            padding: 5px 0;
+            width: 50px;
+          }
+        }
+        td:nth-child(4) {
+          text-align: right;
+        }
+        td:nth-child(5) {
+          text-align: center;
+          button {
+            padding: 5px 8px;
+            border-radius: 3px;
+            background: blue;
+            color: #fff;
+          }
+        }
+      }
+      tfoot {
+        td {
+          text-align: center;
+        }
+      }
+     
+      &:hover {
+        transform: scale(1.05); /* 호버 시 크기 확대 효과 추가 */
+      }
+}
+
+
+}
 `
 
 const CartSection = () => {
