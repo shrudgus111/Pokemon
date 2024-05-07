@@ -25,10 +25,10 @@ const CardLatestBlock = styled.div`
             flex-direction: column;
             align-items: center;
             position: relative;
-            width:325px;
+            width: 30%;
             z-index: 2;
             img{
-                width: 90%;
+                width: 100%;
             }
             .deckname {
                 width: 100%;
