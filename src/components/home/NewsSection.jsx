@@ -4,13 +4,14 @@ import news from '/src/assets/data/news'
 import { Link, NavLink } from 'react-router-dom'
 
 const NewsSectionBlock = styled.div`
-background: #f7f7f7;
+background: url("/src/assets/image/bg_pattern.jpg");
 width: 100%;
 padding: 50px 0 130px;
     h2{
         text-align: center;
         margin-bottom: 20px;
-        font-size: 30px;
+        font-size: 50px;
+        letter-spacing: -0.07em;
     }
     .container{
         display: flex;
@@ -92,14 +93,37 @@ padding: 50px 0 130px;
         text-align: center;
         button{
             padding:15px 125px;
-            background: #000;
             transform: skew(-20deg);
             color: #fff;
-            p {
-                transform: skew(20deg);
-                font-size: 21px;
-                font-weight: bold;
+            display: inline-block;
+            position: relative;
+            background: linear-gradient(to right, #55bcb5, #85c083, #bec449, #f7c90e);
+            border: 0;
+            z-index: 2;
+            outline: none;
+            ::before {
+                content: '';
+                position: absolute;
+                left: 4px;
+                top: 4px;
+                width: 97%;
+                height: 86%;
+                background-color: #fff;
+                z-index: 0;
             }
+            .p_contain{                
+                p {
+                    transform: skew(20deg);
+                    font-size: 21px;
+                    font-weight: bold;
+                    color: #000;
+                    z-index: 3;
+                    letter-spacing: -0.07em;
+                }
+            }
+        }
+        button p::before {
+            content: none; /* p 요소에 직접 적용된 before 가상 요소 제거 */
         }
     }
 `
@@ -135,7 +159,9 @@ const NewsSection = () => {
             <div className='more'>
                     <Link to="/news">
                         <button>
-                            <p>더보기</p>
+                            <div className='p_contain'>
+                                <p>더보기</p>
+                            </div>
                         </button>
                     </Link>
             </div>

@@ -5,7 +5,7 @@ import { getSeries } from '@/store/card';
 
 const CardLatestBlock = styled.div`
     height: 500px;
-    background: url("/src/assets/image/bg_pattern.jpg");
+    background: url("/src/assets/image/bg_pattern3.jpg");
     position: relative;
     display: flex;
     justify-content: center;
@@ -111,7 +111,7 @@ const CardLatest = () => {
     const dispatch = useDispatch();
 
     const handleClick = (series) => {
-        window.scrollTo({ top: 500, behavior: 'smooth' });
+        window.scrollTo({ top: -500, behavior: 'smooth' });
         dispatch(getSeries(series));
         console.log(series)
     };
