@@ -34,7 +34,6 @@ padding: 5%;
                 .image_container{
                     img {
                         width: 100%;
-                        height: 100%;
                     }
                 }
                 h4 {
