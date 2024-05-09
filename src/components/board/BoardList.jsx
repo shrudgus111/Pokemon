@@ -2,8 +2,9 @@ import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { useSelector,useDispatch  } from 'react-redux';
-import { changeType } from '@/store/board';
-import dayjs from 'dayjs';
+import { changeType, fetchNotice, fetchReview } from '@/store/board';
+
+
 
 const BoardListBlock = styled.div`
     margin: 0px 0 50px; 
@@ -32,8 +33,9 @@ const BoardListBlock = styled.div`
     }
     }
     .tg{
+        margin-top:50px; 
         text-align: center;
-        background:#ff3636;
+        background:#5dcf02;
         color:#fff;
         padding:15px;
         font-family: 'Arial', sans-serif;
@@ -147,8 +149,9 @@ const BoardListBlock = styled.div`
             }
         }
         .tg{
+            margin-top:50px; 
             text-align: center;
-            background:#ff3636;
+            background:#5dcf02;
             color:#fff;
             padding:15px;
             font-family: 'Arial', sans-serif;
@@ -262,15 +265,25 @@ const BoardList = () => {
     const list = useSelector(state=>state.boards.list)
     const type = useSelector(state=>state.boards.type)
     const user = useSelector(state=>state.members.user)
+    
+    const [actList1, setActList1] = useState([])
+    const [actList2, setActList2] = useState([])
 
       useEffect(()=>{
-  if (type=="관리자") {
-    dispatch(changeType("관리자"))
-  } else{
-    dispatch(changeType("유저"))
-  }
+        if (type=="관리자") {
+            dispatch(changeType("관리자"))
+            dispatch(fetchNotice())
+           
+        } else{
+            dispatch(changeType("유저"))
+            dispatch(fetchReview())
+            setActList1(list.filter((item)=>item.birthday>=2010))
+            setActList2(list.filter((item)=>item.birthday<2010))
+        }
 
-   },[])
+   },[type, dispatch, list])
+
+   
 
     return (
         <BoardListBlock>
@@ -289,26 +302,81 @@ const BoardList = () => {
                      </li>
                     ))}
                 </div>
-                <div className='tg'>
-                            명단
-                           
-                        </div>
+                
+                
+                { type=="관리자" &&
+                 <>
+              <div className='tg3'>
+                관리자 작성
+               
+                </div>
                 <table>
-                   
-                <tbody>
-                    {   list.length>0 &&
-                        list.map((post, index)=>(
-                            <tr key={index}>
-                                <td>{list.length - index}</td>
-                                <td><Link to={`/boardDetail/${post.subject}`} state={{post:post}}>{post.subject}</Link></td>
-                                <td>{post.writer}</td>
-                                {/* <td>{post.content}</td> */}
-                                <td className='deck-link'><a href="/">덱보러가기</a></td>
-                            </tr>
-                        ))
-                    }
-                </tbody>
+                    <tbody>
+                        {   list.length>0 &&
+                            list.map((post, index)=>(
+                                <tr key={index}>
+                                    <td>{list.length - index}</td>
+                                    <td><Link to={`/boardDetail/${post.subject}`} state={{post:post}}>{post.subject}</Link></td>
+                                    <td>{post.writer}</td>
+                                    {/* <td>{post.content}</td> */}
+                                    <td className='deck-link'><a href="/">덱보러가기</a></td>
+                                </tr>
+                            ))
+                        }
+                    </tbody>
                 </table>
+                 </>
+                }
+                { type=="유저" &&
+                <>
+                <div className='tg'>
+                코리안리그 주니어 부문
+               
+                </div>
+                <table>
+                     <tbody>
+                        {   actList1.length>0 &&
+                            actList1.map((post, index)=>(
+                                <tr key={index}>
+                                    <td>{actList1.length - index}</td>
+                                    <td><Link to={`/boardDetail/${post.subject}`} state={{post:post}}>{post.subject}</Link></td>
+                                    <td>{post.writer}</td>
+                                    {/* <td>{post.content}</td> */}
+                                    <td className='deck-link'><a href="/">덱보러가기</a></td>
+                                </tr>
+                            ))
+                        }
+                    </tbody>
+                </table>
+                </>
+                }
+
+                { type=="유저" &&
+                <>
+                <div className='tg2'>
+                코리안리그 시니어 부문
+               
+                </div>
+                <table>
+                     <tbody>
+                        {   actList2.length>0 &&
+                            actList2.map((post, index)=>(
+                                <tr key={index}>
+                                    <td>{actList2.length - index}</td>
+                                    <td><Link to={`/boardDetail/${post.subject}`} state={{post:post}}>{post.subject}</Link></td>
+                                    <td>{post.writer}</td>
+                                    {/* <td>{post.content}</td> */}
+                                    <td className='deck-link'><a href="/">덱보러가기</a></td>
+                                </tr>
+                            ))
+                        }
+                    </tbody>
+                </table>
+                </>
+                }
+
+
+
                 {(type === "관리자" && user && user.userId === "tsalt@hanmail.net") &&
                     <div className="btn">
                         <Link to="/boardWrite">작성하기</Link>
@@ -320,15 +388,10 @@ const BoardList = () => {
                         <Link to="/boardWrite">신청하기</Link>
                     </div>
                 }
-
-
-
-
-                 
-
-
-
             </div>
+
+
+        
         </BoardListBlock>
     );
 };

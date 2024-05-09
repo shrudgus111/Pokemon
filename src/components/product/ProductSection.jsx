@@ -111,6 +111,115 @@ margin-top:30px;}
   text-decoration: none;
   cursor: pointer;
 }
+
+@media (max-width:768px) {
+  margin-bottom:90px;
+  .info p {
+    font-size: 17px;
+    font-weight: 800;
+    text-overflow: ellipsis;
+    text-align: center;
+  }
+  .info .dam {
+    margin-top: 6px;
+    text-align: center;
+    background: #343434;
+    padding: 11px 5px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    button {
+      background: #343434;
+      color: #fff;
+      font-size: 16px;
+    }
+    span {
+      margin-left: 6px;
+    }
+  }
+
+  /* Modal CSS */
+.modal {
+  display: block;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color:#1d1d1d;
+  margin: 15% auto;
+  padding: 10px 30px 30px 20px;
+  border: 1px solid #888;
+  width: 80%;
+  
+  color:#fff;
+  .co2{ display:block;
+    justify-content: center;
+    align-items: center;
+  img{width:100%;}
+  .mk{ 
+  p{  font-size: 30px;
+    font-weight:900;
+    color:#fff;
+    margin:32px 0;
+  text-align:center;}
+    .dam2 {
+        margin-top: 6px;
+        text-align: center;
+        background: #fff;
+        padding: 11px 5px;
+        color: #000;
+        border-radius:5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        button {
+          background: #fff;
+          color: #000;
+          font-size: 34px;
+        height:42px;
+        line-height:53px;
+        }
+        span {
+          margin-left: 6px;
+        }
+      }
+  .tx{ font-size: 15px;
+    text-align: center;
+margin-top:30px;}
+  }
+  }
+}
+
+/* Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 34px;
+  font-weight: bold;
+  background:#fff;
+  text-align: center;
+  border-radius:50%;
+  width:40px;
+  height:33px;
+ line-height:28px;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+}
 `
 
 const UlBlock = styled.ul`
@@ -130,7 +239,12 @@ const ListBlock = styled.li`
   border-radius: 10px;
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3); /* 그림자 효과 추가 */
 
+
+
+
   @media (max-width:768px) {
+
+
     flex: 0 0 45%;
     margin: 20px 2%;
     cursor: pointer;
@@ -173,6 +287,42 @@ const ListBlock = styled.li`
     margin: 5px 0;
     font-size: 14px;
   }
+
+  @media (max-width:468px) {
+    .photo {
+      cursor: pointer;
+      transition: transform 0.5s ease; /* transform에 전환 추가 */
+    }
+  
+    &:hover .photo {
+      transform: rotate(20deg) scale(1.1); /* 호버 시 이미지를 20도 회전하고 약간 확대 */
+    }
+  
+    .info {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: rgba(0, 0, 0, 0.7); /* 반투명 배경 추가 */
+      color: #fff;
+      padding: 10px;
+      transform: translateY(100%);
+      transition: transform 0.3s ease; /* transform에 전환 추가 */
+      visibility: hidden;
+      opacity: 0;
+    }
+  
+    &:hover .info {
+      transform: translateY(10%);
+      visibility: visible;
+      opacity: 1;
+    }
+  
+    .info p {
+      margin: 5px 0;
+      font-size: 14px;
+    }
+}
 `;
 
 const LoadingBlock = styled.div`
@@ -203,6 +353,7 @@ const ButtonBlock = styled.div`
       color: #fff
     }
   }
+  
 `
 
 const ProductSection = ({ title }) => {

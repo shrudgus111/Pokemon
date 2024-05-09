@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import styled from 'styled-components'
-import {useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 import {Link, useNavigate} from 'react-router-dom'
 import {noticeDB, reviewDB } from '@/assets/firebase'
 
@@ -28,7 +28,8 @@ const BoardWrite = ({type}) => {
 
     const [board, setBoard] = useState({
         subject : "",
-        content: ""
+        content: "",
+        birthday:""
     })
 
     const handleChange = (e)=>{
@@ -40,10 +41,10 @@ const BoardWrite = ({type}) => {
         e.preventDefault()
         const date = new Date().toISOString()
         if (type=="관리자") {
-            noticeDB.push({...board, writer:user.userId, hit:0, date:date})
+            noticeDB.push({subject:board.subject,content:board.content, writer:user.userId, hit:0, date:date})
            
         } else if (type=="유저") {
-            reviewDB.push({...board, writer:user.userId, hit:0, date:date})
+            reviewDB.push({subject:board.subject,content:board.content,birthday:board.birthday, writer:user.userId, hit:0, date:date})
             
         }
         navigate("/boardList")
@@ -70,6 +71,14 @@ const BoardWrite = ({type}) => {
                                 <input type="text" name="subject" value={board.subject} onChange={handleChange} />
                             </td>
                         </tr>
+                        { type=="유저" && 
+                        <tr>
+                            <td>생년</td>
+                            <td>
+                                <input type="text" name="birthday" value={board.birthday} onChange={handleChange} />
+                            </td>
+                        </tr>
+                           }
                         <tr>
                             <td>RP</td>
                             <td>

@@ -23,9 +23,11 @@ table {
 `
 
 const BoardDetail = ({post}) => {
-    const navigate = useNavigate()
+    
     const user = useSelector(state=>state.members.user)
     const type = useSelector(state=>state.boards.type)
+
+    const navigate = useNavigate()
 
     const onRemove = (e)=>{
          e.preventDefault()
@@ -42,11 +44,11 @@ const BoardDetail = ({post}) => {
     useEffect(()=>{
        if (type=="관리자") {
         noticeDB.child(post.key).update({
-           hit:post.hit+1
+           'hit' :post.hit+1
         })
     }else{
         reviewDB.child(post.key).update({
-            hit:post.hit+1
+            'hit' :post.hit+1
         })
     }
       }, [])
