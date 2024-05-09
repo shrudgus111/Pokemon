@@ -6,6 +6,15 @@ const TitleBlock = styled.div`
     text-align:center;
     margin:50px 0;
     font-weight: 700;
+
+    @media (max-width:768px) {
+        font-size:35px;
+        text-align:center;
+        margin:50px 0;
+    }
+
+    
+
 `
 
 const Title = ({title}) => {

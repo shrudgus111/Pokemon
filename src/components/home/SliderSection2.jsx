@@ -14,6 +14,13 @@ margin:90px auto;
     position: relative;
     padding: 172px 0 0;
     text-align: center; /* 부모 요소를 수평으로 가운데 정렬 */
+
+    @media (max-width:768px) {
+      overflow: hidden;
+      position: relative;
+      padding: 132px 0 0;
+      text-align: center; /* 부모 요소를 수평으로 가운데 정렬 */
+  }
   
     .bg {
       position: absolute;
@@ -112,8 +119,8 @@ margin:90px auto;
     .slick-arrow {
         position: absolute; bottom:92%;   transform: translateX(-50%);
         font-size: 80px; color:#000;
-        &.slick-prev {right:100px; z-index:9999}
-        &.slick-next {right:10px;}
+        &.slick-prev {right:85px; z-index:9999}
+        &.slick-next {right:0px;}
     }
     .slick-slide {
         margin: 0 !important; /* 좌우 마진 제거 */
@@ -129,6 +136,15 @@ margin:90px auto;
 }
 
 
+@media (max-width:768px) {
+ .slick-slider{
+  margin-top:37px;
+ }
+
+
+ 
+}
+
 `
 
 const SliderSection2 = () => {
@@ -141,6 +157,16 @@ const SliderSection2 = () => {
         slidesToScroll:1,
         prevArrow : <IoIosArrowDropleftCircle />,
         nextArrow : <IoIosArrowDroprightCircle />,
+        responsive : [
+          {
+              breakpoint:769,
+              settings:{
+                  slidesToShow:1,
+                  slideToScroll:1
+              }
+          }
+      ]
+
     }
 
 

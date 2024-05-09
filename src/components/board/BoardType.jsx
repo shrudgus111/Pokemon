@@ -6,14 +6,14 @@ import { useDispatch, useSelector } from 'react-redux'
 const BoardTypeBlock = styled.div`
     text-align:center; margin-top:30px; 
     button { margin:20px; width:100px; height:40px; 
-        &.on { background:green; color:#fff; }
+        &.on {  background:#04a6e2; color:#fff; }
     }
 `
 
 const BoardType = () => {
     const dispatch = useDispatch()
     const type = useSelector(state=>state.boards.type)
-    const title = ["notice", "review"]
+    const title = ["관리자", "유저"]
     
     return (
         <BoardTypeBlock>

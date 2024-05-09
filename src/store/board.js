@@ -6,7 +6,7 @@ const boardSlice = createSlice({
     initialState : {
         notice : [],  // [ {key:'-Nvotdkdkdlf', contnet:'게시글내용', subject:'글제목', date:날짜, writer:'작성자', hit:0}]
         review : [],
-        type : "notice",
+        type : "관리자",
         list : []
     },
     reducers : {
@@ -19,9 +19,9 @@ const boardSlice = createSlice({
         },
         changeType(state, action){
             state.type = action.payload
-            if (state.type == "notice") {
+            if (state.type == "관리자") {
                 state.list = state.notice
-            } else if (state.type == "review") {
+            } else if (state.type == "유저") {
                 state.list = state.review
             }
         }

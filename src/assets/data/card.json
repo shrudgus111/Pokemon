@@ -1,6 +1,6 @@
 [
-    {"evo": "normal", "name": "피카츄ex", "code": "svi", "img": "/src/assets/card_img/SVI_018_P.png"},
     {"evo": "normal", "name": "피카츄", "code": "sv5m", "img": "/src/assets/card_img/SV5M_023.png" },
+    {"evo": "normal", "name": "피카츄ex", "code": "svi", "img": "/src/assets/card_img/SVI_018_P.png"},
     {"evo": "normal", "name": "피카츄", "code": "sv4a", "img": "/src/assets/card_img/SV4a_055.png" },
     {"evo": "normal", "name": "피카츄", "code": "sv4a", "img": "/src/assets/card_img/SV4a_055m.png" },
     {"evo": "normal", "name": "피카츄", "code": "sv4a", "img": "/src/assets/card_img/SV4a_236.png" },

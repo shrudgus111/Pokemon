@@ -85,7 +85,7 @@ const HeaderBlock = styled.div`
     .closeNav { display: none; }
     }
     .member{
-      width: 17%;
+      width: 20%;
       display:flex;
       align-items:center;
       font-size:40px;

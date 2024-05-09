@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useSelector,useDispatch  } from 'react-redux';
+import { changeType } from '@/store/board';
 import dayjs from 'dayjs';
 
 const BoardListBlock = styled.div`
@@ -11,6 +12,8 @@ const BoardListBlock = styled.div`
         justify-content: center;
         border-bottom: 1px solid #000;
         margin-bottom: 50px;
+        li{ 
+            list-style:none;
         a {
             text-align: center;
             width: 300px;
@@ -18,7 +21,7 @@ const BoardListBlock = styled.div`
             margin: 0 100px;
             padding-bottom: 15px;
             background: #fff;
-            border-bottom: 1px solid #000;
+            border-bottom: 0px solid #000;
             &.on {
                 background: #fff;
                 color: #ffa70e;
@@ -27,9 +30,26 @@ const BoardListBlock = styled.div`
             }
         }
     }
+    }
     .tg{
         text-align: center;
-        background:#5dcf02;
+        background:#ff3636;
+        color:#fff;
+        padding:15px;
+        font-family: 'Arial', sans-serif;
+        font-weight: bold;
+    }
+    .tg2{
+        text-align: center;
+        background:#04a6e2;
+        color:#fff;
+        padding:15px;
+        font-family: 'Arial', sans-serif;
+        font-weight: bold;
+    }
+    .tg3{
+        text-align: center;
+        background:#ff3636;
         color:#fff;
         padding:15px;
         font-family: 'Arial', sans-serif;
@@ -59,6 +79,13 @@ const BoardListBlock = styled.div`
             text-align: center;
             font-family: 'Arial', sans-serif;
             width: 25%; /* 각 셀이 화면의 25%를 차지하도록 설정 */
+             font-weight:600;
+
+           &:nth-child(4) a{
+                background-color: #FFDE00;
+                padding: 9px 22px;
+                border-radius:30px;
+            }
         }
       
     
@@ -71,18 +98,153 @@ const BoardListBlock = styled.div`
     }
     .btn {
         text-align: center;
-        margin: 20px 0; 
+        margin: 40px 0; 
         a {
             padding: 10px 20px;
-            background: blue;
+            background: #000;
             color: #fff;
             text-decoration: none;
             border-radius: 5px;
             transition: background-color 0.3s ease;
         }
         a:hover {
-            background: #0066cc;
+            background: #ffa70e;
         }
+
+
+
+
+       
+       
+    }
+    @media (max-width:768px) {
+        margin: 0px 0 50px; 
+        .application__type {
+            margin-top:34px;
+            display: flex;
+            justify-content: center;
+            border-bottom:1px solid #000;
+            li{list-style:none;
+              width:49%;
+              
+            a {
+         
+              width:95%;
+              font-size:25px;
+              margin:0 5px;
+              padding-bottom: 10px;
+            
+              background:#fff;
+              border-bottom:0px solid #000;
+              &.on {
+                  background:#fff;
+                  color:#ffa70e;
+                  border-bottom:5px solid #ffa70e;
+                  font-weight:700;
+                 
+              }
+          }
+            }
+        }
+        .tg{
+            text-align: center;
+            background:#ff3636;
+            color:#fff;
+            padding:15px;
+            font-family: 'Arial', sans-serif;
+            font-weight: bold;
+        }
+        .tg2{
+            text-align: center;
+            background:#04a6e2;
+            color:#fff;
+            padding:15px;
+            font-family: 'Arial', sans-serif;
+            font-weight: bold;
+        }
+        .tg3{
+            text-align: center;
+            background:#ff3636;
+            color:#fff;
+            padding:15px;
+            font-family: 'Arial', sans-serif;
+            font-weight: bold;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            border: 2px solid #ccc;
+            background-color: #f9f9f9;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+       
+        
+        th {
+            width: 100%;
+            color: #fff;
+            font-weight: bold;
+            border-bottom: 3px solid #ccc;
+            padding: 10px;
+            text-align: center;
+            font-family: 'Arial', sans-serif;
+            display: table-cell; /* 테이블 셀로 표시 */
+        }
+        tr{
+            
+          td {
+                padding: 5px;
+                text-align: center;
+                font-family: 'Arial', sans-serif;
+                width: 0%; /* 각 셀이 화면의 25%를 차지하도록 설정 */
+                 font-weight:600;
+                 font-size: 13px;
+
+                 &:nth-child(2) {
+                    text-align: left;
+                }
+                &:nth-child(3) {
+                    text-align: left;
+                }
+                &:nth-child(4) {
+                    text-align: right;
+                }
+    
+               &:nth-child(4) a{
+                    background-color: #FFDE00;
+                    padding: 9px 6px;
+                    border-radius:30px;
+                }
+            }
+        }
+        
+        tbody tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        tbody tr:hover {
+            background-color: #e9e9e9;
+            transition: background-color 0.3s ease;
+        }
+        .btn {
+            text-align: center;
+            margin: 40px 0; 
+            a {
+                padding: 10px 20px;
+                background: #000;
+                color: #fff;
+                text-decoration: none;
+                border-radius: 5px;
+                transition: background-color 0.3s ease;
+            }
+            a:hover {
+                background: #ffa70e;
+            }
+    
+    
+    
+    
+           
+           
+        }  
     }
 `;
 
@@ -96,54 +258,76 @@ const BoardList = () => {
         { menu: '플레이어즈', id: 1 },
     ];
 
-    const list = useSelector(state => state.boards.list);
-    const type = useSelector(state => state.boards.type);
-    const user = useSelector(state => state.members.user);
+    const dispatch = useDispatch()
+    const list = useSelector(state=>state.boards.list)
+    const type = useSelector(state=>state.boards.type)
+    const user = useSelector(state=>state.members.user)
+
+      useEffect(()=>{
+  if (type=="관리자") {
+    dispatch(changeType("관리자"))
+  } else{
+    dispatch(changeType("유저"))
+  }
+
+   },[])
 
     return (
         <BoardListBlock>
             <div className="application__wrap">
                 <div className="application__type">
                     {menuItems.map(item => (
-                        <Link
-                            key={item.id}
-                            to={item.id === 0 ? '/application' : '/boardList'}
-                            className={active === item.id ? 'on' : ''}
-                            onClick={() => handleClick(item.id)}
-                        >
-                            {item.menu}
-                        </Link>
+                     <li>
+                            <Link
+                                key={item.id}
+                                to={item.id === 0 ? '/application' : '/boardList'}
+                                className={active === item.id ? 'on' : ''}
+                                onClick={() => handleClick(item.id)}
+                            >
+                                {item.menu}
+                            </Link>
+                     </li>
                     ))}
                 </div>
                 <div className='tg'>
-                            플레이어즈 주니어 부문
+                            명단
                            
                         </div>
                 <table>
                    
-                    <tbody>
-                        {list.length > 0 &&
-                            list.map((post, index) => (
-                                <tr key={index}>
-                                    <td>{list.length - index}</td>
-                                    <td>{post.subject}</td>
-                                    <td>{post.writer}</td>
-                                    <td>{dayjs(post.date).format('YYYY-MM-DD')}</td>
-                                    <td>{post.hit}</td>
-                                </tr>
-                            ))}
-                    </tbody>
+                <tbody>
+                    {   list.length>0 &&
+                        list.map((post, index)=>(
+                            <tr key={index}>
+                                <td>{list.length - index}</td>
+                                <td><Link to={`/boardDetail/${post.subject}`} state={{post:post}}>{post.subject}</Link></td>
+                                <td>{post.writer}</td>
+                                {/* <td>{post.content}</td> */}
+                                <td className='deck-link'><a href="/">덱보러가기</a></td>
+                            </tr>
+                        ))
+                    }
+                </tbody>
                 </table>
-                {(type === "notice" && user && user.userId === "tsalt@hanmail.net") &&
+                {(type === "관리자" && user && user.userId === "tsalt@hanmail.net") &&
+                    <div className="btn">
+                        <Link to="/boardWrite">작성하기</Link>
+                    </div>
+                }
+                {
+                (type === "유저" && user) &&
                     <div className="btn">
                         <Link to="/boardWrite">신청하기</Link>
                     </div>
                 }
-                {(type === "review" && user) &&
-                    <div className="btn">
-                        <Link to="/boardWrite">신청하기</Link>
-                    </div>
-                }
+
+
+
+
+                 
+
+
+
             </div>
         </BoardListBlock>
     );
