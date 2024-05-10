@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { useSelector,useDispatch  } from 'react-redux';
 import { changeType, fetchNotice, fetchReview } from '@/store/board';
+import dayjs from 'dayjs'
 
 
 
@@ -317,9 +318,9 @@ const BoardList = () => {
                                 <tr key={index}>
                                     <td>{list.length - index}</td>
                                     <td><Link to={`/boardDetail/${post.subject}`} state={{post:post}}>{post.subject}</Link></td>
-                                    <td>{post.writer}</td>
-                                    {/* <td>{post.content}</td> */}
-                                    <td className='deck-link'><a href="/">덱보러가기</a></td>
+                                    {/* <td>{post.writer}</td> */}
+                                    <td>{post.content}</td>
+                                    <td>{dayjs(post.date).format('YYYY-MM-DD')}</td>
                                 </tr>
                             ))
                         }
@@ -342,7 +343,7 @@ const BoardList = () => {
                                     <td><Link to={`/boardDetail/${post.subject}`} state={{post:post}}>{post.subject}</Link></td>
                                     <td>{post.writer}</td>
                                     {/* <td>{post.content}</td> */}
-                                    <td className='deck-link'><a href="/">덱보러가기</a></td>
+                                    <td className='deck-link'><Link to={`/deck/${post.subject}`} state={{ post: post }}>{post.subject}덱보기</Link></td>
                                 </tr>
                             ))
                         }
@@ -366,7 +367,7 @@ const BoardList = () => {
                                     <td><Link to={`/boardDetail/${post.subject}`} state={{post:post}}>{post.subject}</Link></td>
                                     <td>{post.writer}</td>
                                     {/* <td>{post.content}</td> */}
-                                    <td className='deck-link'><a href="/">덱보러가기</a></td>
+                                    <td className='deck-link'><Link to={`/deck/${post.subject}`} state={{ post: post }}>{post.subject}덱보기</Link></td>
                                 </tr>
                             ))
                         }

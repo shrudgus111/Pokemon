@@ -15,6 +15,7 @@ import BoardListView from '@/views/BoardListView';
 import BoardWriteView from '@/views/BoardWriteView';
 import BoardModifyView from '@/views/BoardModifyView';
 import BoardDetailView from '@/views/BoardDetailView';
+import DeckView from '@/views/DeckView';
 
 
 const App = () => {
@@ -37,11 +38,11 @@ const App = () => {
         <Route path="/join" element={ <JoinView /> } />
         <Route path="/application" element={ <ApplicationView /> } />
         <Route path="/play" element={ <PlayView /> } />
-  
         <Route path="/boardList" element={ <BoardListView /> } />
         <Route path="/boardWrite" element={ <BoardWriteView /> } />
         <Route path="/boardModify/:subject" element={ <BoardModifyView /> } />
         <Route path="/boardDetail/:subject" element={ <BoardDetailView /> } />
+        <Route path="/deck/:subject" element={ <DeckView /> } />
         
       </Route>
     </Routes>
