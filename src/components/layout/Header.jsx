@@ -88,13 +88,21 @@ const HeaderBlock = styled.div`
       width: 20%;
       display:flex;
       align-items:center;
+      justify-content: center;
       font-size:40px;
-      color:#2da5da;
-      @media(max-width: 991px){
-        color: #000;
-      }
+      color:#333;
+      gap: 10px;
     a{
       margin-left: 5px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      span {
+        font-size: 14px;
+        @media(max-width: 991px){
+          display: none;
+        }
+      }
     }
    }
 }
@@ -133,11 +141,10 @@ const Hamburger = styled.div`
   color: #fff;
   background: #000;
   height: 70px;
-  width: 50px;
+  width: 70px;
   display: flex;
   align-items: center;
   justify-content: center;
-
 `
 const MobileNav = styled.nav`
   position: fixed;
@@ -280,8 +287,14 @@ const Header = () => {
                 </div>
                 :
                 <div className="member">
-                    <Link to="/login"><MdOutlineCatchingPokemon /></Link>
-                    <Link to="/join"><FaUsers /></Link>
+                    <Link to="/login">
+                      <MdOutlineCatchingPokemon />
+                      <span>로그인</span>
+                      </Link>
+                    <Link to="/join">
+                      <FaUsers />
+                      <span>회원가입</span>
+                      </Link>
                 </div>
               }
            </div>

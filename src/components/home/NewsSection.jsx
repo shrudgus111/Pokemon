@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from 'styled-components'
 import news from '/src/assets/data/news'
-import { Link, NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import { MdOutlineArrowRight } from "react-icons/md";
 
 const NewsSectionBlock = styled.div`
 background: url("/src/assets/image/bg_pattern.jpg");
@@ -111,7 +112,7 @@ padding: 50px 0 130px;
                 background-color: #fff;
                 z-index: 0;
             }
-            .p_contain{                
+            .p_contain{        
                 p {
                     transform: skew(20deg);
                     font-size: 21px;
@@ -119,6 +120,14 @@ padding: 50px 0 130px;
                     color: #000;
                     z-index: 3;
                     letter-spacing: -0.07em;
+                }
+                svg {
+                    position: absolute;
+                    color: #D0D0D0;
+                    right: 20%;
+                    top: 26%;
+                    transform: skew(20deg);
+                    font-size: 30px;
                 }
             }
         }
@@ -161,6 +170,7 @@ const NewsSection = () => {
                         <button>
                             <div className='p_contain'>
                                 <p>더보기</p>
+                                <MdOutlineArrowRight />
                             </div>
                         </button>
                     </Link>

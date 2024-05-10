@@ -188,7 +188,7 @@ const SliderSection2 = () => {
                     <div className="slide slide5"><iframe width="100%" height="400" src="https://www.youtube.com/embed/XW2WPvfmiL0?si=R38DsXudESnXu_aP" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
                     <div className="slide slide6"><iframe width="100%" height="400" src="https://www.youtube.com/embed/gHm2ojoJAk8?si=obUBzapo9t6IOnMj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
              </Slider>
-             <a href="/"><div className="more"><p>더보기 <MdOutlineArrowRight /></p></div></a>
+             <a href="/play"><div className="more"><p>더보기 <MdOutlineArrowRight /></p></div></a>
              </div>
 </div>
             

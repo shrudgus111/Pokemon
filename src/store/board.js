@@ -8,6 +8,8 @@ const boardSlice = createSlice({
         review : [],
         type : "관리자",
         list : []
+       
+        
     },
     reducers : {
         initNotice(state, action){
@@ -16,12 +18,13 @@ const boardSlice = createSlice({
         },
         initReview(state, action){
             state.review = action.payload.sort((a, b)=> a.key > b.key ? -1 : 1)
+            state.list = action.payload.sort((a, b)=> a.key > b.key ? -1 : 1)
         },
         changeType(state, action){
             state.type = action.payload
-            if (state.type == "관리자") {
+            if (action.payload == "관리자") {
                 state.list = state.notice
-            } else if (state.type == "유저") {
+            } else if (action.payload == "유저") {
                 state.list = state.review
             }
         }

@@ -7,13 +7,15 @@ import boardReducer from './board'
 
 
 
+
 const store = configureStore({
     reducer : {
         news : newsReducer,
         products : productReducer,
         card : cardReducer,
         members : memberReducer,
-        boards : boardReducer
+        boards : boardReducer,
+      
      
     }
 })

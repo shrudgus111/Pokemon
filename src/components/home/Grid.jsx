@@ -267,7 +267,7 @@ const Grid = () => {
                             <p className='p1'>포켓몬 카드 게임</p>
                             <h3>자판기</h3>
                         </div>
-                        <a href='/'><img src="./assets/image/c1.png" alt="" />
+                        <a href='/search'><img src="./assets/image/c1.png" alt="" />
                         </a>
                         </div>
                         <div className='bm2'> 
@@ -275,7 +275,7 @@ const Grid = () => {
                             <p className='p1'>포켓몬 카드 게임</p>
                             <h3>포켓몬스쿨</h3>
                         </div>
-                        <a href='/'><img src="./assets/image/c3.png" alt="" />
+                        <a href='/search'><img src="./assets/image/c3.png" alt="" />
                         </a>
                         </div>
                         <div className='bm3'> 
@@ -283,7 +283,7 @@ const Grid = () => {
                             <p className='p1'>포켓몬 카드 게임</p>
                             <h3>포켓몬 카드샵</h3>
                         </div>
-                        <a href='/'><img src="./assets/image/c1.png" alt="" />
+                        <a href='/search'><img src="./assets/image/c1.png" alt="" />
                         </a>
                         </div>
                 </div>
