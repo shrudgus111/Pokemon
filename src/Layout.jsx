@@ -19,6 +19,11 @@ const LoadingBlock = styled.div`
         100% { transform : rotate(3turn) }
     }
 `
+const LayOutBlock = styled.div`
+main {
+    padding-top: 120px;
+}
+`
 
 const Layout = () => {
     const dispatch = useDispatch()
@@ -40,13 +45,13 @@ const Layout = () => {
         );
     } 
     return (
-        <div>
+        <LayOutBlock>
             <Header />
             <main>
                 <Outlet />
             </main>
             <Footer />
-        </div>
+        </LayOutBlock>
     );
 };
 
