@@ -9,7 +9,7 @@ const CardSectionBlock = styled.div``
 const SliderSection = () => {
     return (
         <CardSectionBlock>
-            <CardSliderSearch/>
+            <CardSliderSearch />
             <CardSlider />
             <CardLatest />
         </CardSectionBlock>
