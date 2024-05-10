@@ -4,21 +4,33 @@ import { useDispatch } from 'react-redux';
 import { getSeries } from '@/store/card';
 
 const CardLatestBlock = styled.div`
-    height: 500px;
-    background: url("/src/assets/image/bg_pattern3.jpg");
+    height: 60%;
+    background: #242424;
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-
+    overflow: hidden;
+    &::before {
+        content: '';
+        position: absolute;
+        top: -29px;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 29px;
+        background-size: cover;
+        background-image: url(/src/assets/image/bg_top_dark.png);
+        background-repeat: no-repeat;
+    }
+}
     .card_pack {
         max-width: 1250px;
         margin: 0 auto;
         display: flex;
         justify-content: center;
         align-items: center;
-
         .left,
         .right {
             display: flex;
@@ -27,6 +39,9 @@ const CardLatestBlock = styled.div`
             position: relative;
             width: 30%;
             z-index: 2;
+            @media(max-width:700px){
+                width: 240px;
+            }
             img{
                 width: 100%;
             }
@@ -46,9 +61,10 @@ const CardLatestBlock = styled.div`
             transition: all 0.4s ease-in-out;
             z-index: 0;
             opacity: 0;
+            width: 20%;
+            
             .image1 {
                 width: 50%;
-                transform: rotateZ(-25deg);
                 box-shadow: 5px 5px 10px black;
                 border-radius: 10px;
             }
@@ -64,28 +80,30 @@ const CardLatestBlock = styled.div`
                 width: 50%;
                 position: absolute;
                 left: 70%;
-                transform: rotateZ(20deg);
                 box-shadow: 5px 5px 10px black;
                 border-radius: 10px;
             }
         }
         .left:hover  + .detail1 {
             opacity: 1;
+            @media(max-width:1500px){
+                opacity: 0;
+            }
         }
         .detail2 {
             position: absolute;
-            right: 5%;
+            right: 9%;
             transition: all 0.5s ease-in-out;
             z-index: 0;
             opacity: 0;
+            width: 20%;
             .image1 {
-                width: 40%;
-                transform: rotateZ(-25deg);
+                width: 50%;
                 box-shadow: 5px 5px 10px black;
                 border-radius: 10px;
             }
             .image2 {
-                width: 40%;
+                width: 50%;
                 position: absolute;
                 top: -10%;
                 left: 26%;
@@ -93,18 +111,21 @@ const CardLatestBlock = styled.div`
                 border-radius: 10px;
             }
             .image3 {
-                width: 40%; 
+                width: 50%; 
                 position: absolute;
                 left: 56%;
-                transform: rotateZ(20deg);
                 box-shadow: 5px 5px 10px black;
                 border-radius: 10px;
             }
         }
         .right:hover  + .detail2 {
             opacity: 1;
+            @media(max-width:1500px){
+                opacity: 0;
+            }
         }
     }
+    
 `;
 
 const CardLatest = () => {
@@ -117,7 +138,7 @@ const CardLatest = () => {
     };
 
     return (
-        <CardLatestBlock>
+        <CardLatestBlock className='first'>
             <div className='card_pack'>
                 <div className='left'>
                     <img className='deckname' onClick={() => handleClick("old")} src="/src/assets/image/pr1.png" alt="" />

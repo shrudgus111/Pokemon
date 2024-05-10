@@ -11,7 +11,8 @@ import nextArrowImg from '/src/assets/image/swiper_next_dark.png';
 const CardSliderBlock = styled.div`
   margin: 0 auto;
   position: relative;
-  background: url("/src/assets/image/bg_pattern.jpg");
+  padding: 77px 0 37px;
+  background: ${({ series }) => getBackgroundImage(series)} no-repeat center / cover;
   img { 
     width: 100%;
   }
@@ -21,7 +22,7 @@ const CardSliderBlock = styled.div`
     font-size: 30px;
   }
   .slick-list {
-    padding: 50px 50px !important;
+    padding: 140px 50px 0px !important;
     position: relative;
     @media (max-width:700px){
       padding-top: 90px !important;
@@ -29,9 +30,6 @@ const CardSliderBlock = styled.div`
     @media (max-width:600px){
       padding-top: 90px !important;
     }
-  }
-  .slick-track{
-    padding-top: 50px;
   }
   .slick-arrow {
     position: absolute; 
@@ -42,7 +40,7 @@ const CardSliderBlock = styled.div`
     height: 90px;
     cursor: pointer;
     opacity: 0;
-    transition: opacity 0.5s ease;
+    transition: opacity 0.2s ease;
     &.slick-prev { 
       left: 25%;
       z-index: 2;
@@ -64,37 +62,59 @@ const CardSliderBlock = styled.div`
     } 
   }
   .slick-current {
-    // background: linear-gradient(to bottom, transparent, transparent, #2a2a29);
     border-radius: 15px;
-    filter: brightness(100%) opacity(100%) !important;
     transform: translateY(-10%);
+    opacity: 1 !important;
   }
   .card {
-    padding: 0 10px 25px;
+    padding: 0 7px 25px;
     cursor: zoom-in;
   }
   .slick-slide {
-    filter: brightness(50%) opacity(70%);
+    opacity:0;
+    transition: all 0.2s;
   }
   .slick-slider {
     @media(max-width:768px) {
       margin-top: 0 !important;
     }
-  }:hover .slick-arrow {
-    opacity: 1;
+  }
+  .slick-slider:hover .slick-arrow {
+      opacity: 1;
+  }
+  .slick-slider:hover .slick-slide {
+    opacity: 0.7;
   }
   .slick-current .card-content {
-    margin-top: 20px;
+    margin-top: 0px;
     display: block;
     padding: 15px;
-    color: #000;
-    font-size: 20px;
+    color: #fff;
+    font-size: 1.3rem;
     font-weight: 600;
+    @media(max-width:600px){
+      font-size: 15px;
+    }
+  }
+  .slick-slide .slick-current  {
+    opacity: 1 important;
+  }
+  .slick-current .card {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), #000);
     border-radius: 15px;
   }
   .card-content {
     display: none;
-    background: #f6f6f6;
+  }
+    .character {
+      position: absolute;
+      top: 45%;
+      left: 0;
+      background: url("/src/assets/image/koraidon.png") no-repeat;
+      width: 0%;
+      height: 57%;
+      z-index: 3;
+    }
   }
 `;
 
@@ -118,6 +138,9 @@ const ModalOverlay = styled.div`
 const ModalWrapper = styled.div`
   width: 450px;
   position: relative;
+    @media(max-width:600px){
+      width: 50%;
+    }
   .overlay {
     position: absolute;
     width: 100%;
@@ -154,6 +177,17 @@ const NoResultBlock = styled.div`
     font-weight: 400;
   }
 `;
+
+const getBackgroundImage = (series) => {
+  switch(series) {
+    case 'old':
+      return 'url("/src/assets/image/korai_bg.jpg")';
+    case 'new':
+      return 'url("/src/assets/image/miraidon_bg.jpg")';
+    default:
+      return 'url("/src/assets/image/korai_bg.jpg")';
+  }
+};
 
 const CardSlider = () => {
   const [rotation, setRotation] = useState({ rotateX: 0, rotateY: 0 });
@@ -192,6 +226,7 @@ const CardSlider = () => {
   };
 
   const [modalSettings, setModalSettings] = useState({
+    rows: 1,
     dots: false,
     autoplay: false,
     infinite: true,
@@ -203,6 +238,7 @@ const CardSlider = () => {
     prevArrow: <img src={prevArrowImg} alt="Previous" />,
     nextArrow: <img src={nextArrowImg} alt="Next" />,
     centerMode: true,
+    initialSlide: 0,
     responsive: [
       {
         breakpoint: 1899,
@@ -254,7 +290,7 @@ const CardSlider = () => {
   }
 
   return (
-    <CardSliderBlock>
+    <CardSliderBlock series={series}>
       <Slider {...modalSettings}>
         {sliderList.map((item, index) => (
           <div key={index} className='card' onClick={() => openModal(item)}>
@@ -263,6 +299,7 @@ const CardSlider = () => {
           </div>
         ))}
       </Slider>
+          <div className='character'></div>
       {modalOpen && (
         <ModalOverlay>
           <ModalWrapper onClick={closeModal} onMouseMove={handleMouseMove}  style={{ transform: `perspective(350px) rotateX(${rotation.rotateX}deg) rotateY(${rotation.rotateY}deg)` }}>

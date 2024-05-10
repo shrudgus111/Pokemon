@@ -4,7 +4,6 @@ import eventData from '@/assets/data/event'
 
 const EventListBlock = styled.div`
 width: 100%;
-height: 100%;
 padding: 5%;
     .bg {
         display: flex;
@@ -23,7 +22,6 @@ padding: 5%;
             box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3);
             transition: all 0.3s ease-in-out;
             cursor: pointer;
-            height: 100%;
             @media (max-width:993px) {
                 flex: 0 0 48%;
             }
@@ -34,6 +32,7 @@ padding: 5%;
                 .image_container{
                     img {
                         width: 100%;
+                        height: 100%;
                     }
                 }
                 h4 {
