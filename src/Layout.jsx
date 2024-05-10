@@ -21,7 +21,7 @@ const LoadingBlock = styled.div`
 `
 const LayOutBlock = styled.div`
 main {
-    padding-top: 120px;
+    padding-top: 6%;
 }
 `
 
