@@ -13,6 +13,7 @@ const CardSliderBlock = styled.div`
   position: relative;
   padding: 77px 0 37px;
   background: ${({ series }) => getBackgroundImage(series)} no-repeat center / cover;
+  transition: background-image 0.5s ease;
   img { 
     width: 100%;
   }

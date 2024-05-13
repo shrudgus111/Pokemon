@@ -1,7 +1,16 @@
-import React from 'react';
-import styled from 'styled-components';
+import React, {useState} from 'react';
+import styled, {keyframes} from 'styled-components';
 import { useDispatch } from 'react-redux';
 import { getSeries } from '@/store/card';
+
+const Animation = keyframes`
+0%, 100%{
+    transform: scale(1);
+}
+50% {
+    transform: scale(1.1);
+}
+`
 
 const CardLatestBlock = styled.div`
     height: 60%;
@@ -31,6 +40,7 @@ const CardLatestBlock = styled.div`
         display: flex;
         justify-content: center;
         align-items: center;
+        gap: 20px;
         .left,
         .right {
             display: flex;
@@ -54,14 +64,26 @@ const CardLatestBlock = styled.div`
                 }
             }
         }
+        .left.active > .deckname {
+            animation: ${Animation} 2s infinite; /* 애니메이션 적용 */
+        }
+        .right.active > .deckname {
+            animation: ${Animation} 2s infinite; /* 애니메이션 적용 */
+        }
+        .left:hover .detail1 {
+            opacity: 1;
+        }
+        .right:hover .detail2 {
+            opacity: 1;
+        }
         .detail1 {
             position: absolute;
-            left: 5%;
+            left: -100%;
             top: 22%;
             transition: all 0.4s ease-in-out;
             z-index: 0;
             opacity: 0;
-            width: 20%;
+            width: 90%;
             
             .image1 {
                 width: 50%;
@@ -84,19 +106,14 @@ const CardLatestBlock = styled.div`
                 border-radius: 10px;
             }
         }
-        .left:hover  + .detail1 {
-            opacity: 1;
-            @media(max-width:1500px){
-                opacity: 0;
-            }
-        }
         .detail2 {
             position: absolute;
-            right: 9%;
+            right: -93%;
+            top: 15%;
             transition: all 0.5s ease-in-out;
             z-index: 0;
             opacity: 0;
-            width: 20%;
+            width: 100%;
             .image1 {
                 width: 50%;
                 box-shadow: 5px 5px 10px black;
@@ -118,45 +135,41 @@ const CardLatestBlock = styled.div`
                 border-radius: 10px;
             }
         }
-        .right:hover  + .detail2 {
-            opacity: 1;
-            @media(max-width:1500px){
-                opacity: 0;
-            }
-        }
+
     }
-    
 `;
 
 const CardLatest = () => {
     const dispatch = useDispatch();
+    const [activeDeck, setActiveDeck] = useState("old");
 
     const handleClick = (series) => {
         window.scrollTo({ top: -500, behavior: 'smooth' });
         dispatch(getSeries(series));
+        setActiveDeck(series);
         console.log(series)
     };
 
     return (
         <CardLatestBlock className='first'>
             <div className='card_pack'>
-                <div className='left'>
+                <div className={`left ${activeDeck === "old" ? 'active' : ''}`}>
                     <img className='deckname' onClick={() => handleClick("old")} src="/src/assets/image/pr1.png" alt="" />
-                    <img src="/src/assets/image/코라이돈.png" alt="" />
+                    <img className='logo1' src="/src/assets/image/코라이돈.png" alt="" />
+                    <div className='detail1'>
+                        <img className='image1' src="/src/assets/card_img/SV5K_052.png" alt="" />
+                        <img className='image2' src="/src/assets/card_img/SV5K_024.png" alt="" />
+                        <img className='image3' src="/src/assets/card_img/SV5K_053.png" alt="" />
+                    </div>
                 </div>
-                <div className='detail1'>
-                    <img className='image1' src="/src/assets/card_img/SV5K_052.png" alt="" />
-                    <img className='image2' src="/src/assets/card_img/SV5K_024.png" alt="" />
-                    <img className='image3' src="/src/assets/card_img/SV5K_053.png" alt="" />
-                </div>
-                <div className='right'>
+                <div className={`right ${activeDeck === "new" ? 'active' : ''}`}>
                     <img className='deckname' onClick={() => handleClick("new")} src="/src/assets/image/pr2.png" alt="" />
-                    <img src="/src/assets/image/미라이돈.png" alt="" />
-                </div>
-                <div className='detail2'>
-                    <img className='image1' src="/src/assets/card_img/SV5M_052.png" alt="" />
-                    <img className='image2' src="/src/assets/card_img/SV5M_035.png" alt="" />
-                    <img className='image3' src="/src/assets/card_img/SV5M_016.png" alt="" />
+                    <img className='logo2' src="/src/assets/image/미라이돈.png" alt="" />
+                    <div className='detail2'>
+                        <img className='image1' src="/src/assets/card_img/SV5M_052.png" alt="" />
+                        <img className='image2' src="/src/assets/card_img/SV5M_035.png" alt="" />
+                        <img className='image3' src="/src/assets/card_img/SV5M_016.png" alt="" />
+                    </div>
                 </div>
             </div>
         </CardLatestBlock>
