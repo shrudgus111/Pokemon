@@ -72,9 +72,15 @@ const CardLatestBlock = styled.div`
         }
         .left:hover .detail1 {
             opacity: 1;
+            @media(max-width:1550px) {
+                opacity: 0;
+            }
         }
         .right:hover .detail2 {
             opacity: 1;
+            @media(max-width:1550px) {
+                opacity: 0;
+            }
         }
         .detail1 {
             position: absolute;

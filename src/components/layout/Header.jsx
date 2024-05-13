@@ -385,22 +385,22 @@ const Header = () => {
 
                 </li>
                 <li>
-                    <NavLink to="/news">새소식</NavLink>
+                    <NavLink to="/news" onClick={() => setOpenNav(false)}>새소식</NavLink>
                 </li>
                 <li>
-                    <NavLink to="/product">제품정보</NavLink>
+                    <NavLink to="/product" onClick={() => setOpenNav(false)}>제품정보</NavLink>
                 </li>
                 <li>
-                    <NavLink to="/play">놀이방법</NavLink>
+                    <NavLink to="/play" onClick={() => setOpenNav(false)}>놀이방법</NavLink>
                 </li>
                 <li>
-                    <NavLink to="/event">이벤트</NavLink>
+                    <NavLink to="/event" onClick={() => setOpenNav(false)}>이벤트</NavLink>
                 </li>
                 <li>
-                    <NavLink to="/search">카드검색</NavLink>
+                    <NavLink to="/search" onClick={() => setOpenNav(false)}>카드검색</NavLink>
                 </li>
                 <li>
-                    <NavLink to="/application">대회신청</NavLink>
+                    <NavLink to="/application" onClick={() => setOpenNav(false)}>대회신청</NavLink>
                 </li>
             </ul>
             </MobileNav>
