@@ -23,7 +23,7 @@ h2{
     @media (max-width:768px) {
         font-size:22px;
         text-align:center;
-        margin:30px 0;
+        margin:60px 0;
 
         img{
             width:5%;

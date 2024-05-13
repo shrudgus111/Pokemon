@@ -263,8 +263,8 @@ const ApplicationSection = () => {
                             <div className="member__info" key={index}>
                                 <a href={item.link}>
                                     <figure className="member__photo">
-                                        <img src={item.applicationImg}  />
-                                        <div className="tit">포켓몬 카드 게임을 하고 포인트를 모아보아요! <br/>포인트를 쌓으면 <span className='t1'>랭킹</span>도 올라가고, <span className='t2'>상품</span>도 교환할 수 있어요!</div>
+                                        <img src={item.applicationImg} data-aos="fade-down" />
+                                        <div className="tit" data-aos="fade-up">포켓몬 카드 게임을 하고 포인트를 모아보아요! <br/>포인트를 쌓으면 <span className='t1'>랭킹</span>도 올라가고, <span className='t2'>상품</span>도 교환할 수 있어요!</div>
                                         <div className="tit2">포켓몬스쿨과 공인 카드샵 미니리그에서 얻을 수 있는 포인트로 <br/>
 랭킹 순위를 정하는데 필요한 <span className='t1'>랭킹 포인트 (RP) </span>와 <br/>
 포인트를 모아서 경품을 교환할 수 있는 <span className='t2'>포켓몬 카드 게임 포인트 (PP)</span>가 있습니다. <br/>
@@ -275,11 +275,11 @@ const ApplicationSection = () => {
 랭킹 포인트와 포켓몬 카드 게임 포인트 외<br/>
 코리안리그 상위 입상을 통해 모은 승점을 통해<br/>
 포켓몬 월드챔피언십에 진출할 수 있는 특별한  <span className='t3'>코리안리그 포인트(KP)</span> 도 있습니다. </div>
-<div className="pt1"><img src="./assets/image/app_logo2.png" alt="" />
+<div className="pt1" data-aos="zoom-in"><img src="./assets/image/app_logo2.png" alt="" />
 </div>
-<div className="tit3"><a href='/'>[포켓몬 월드챔피언십2019 바로가기]</a></div>
-<div className="pt2"><img src="./assets/image/app_logo3.png" alt="" /></div>
-<div className="tit4"><a href='/'>[포켓몬 월드챔피언십2019 바로가기]</a></div>
+<div className="tit3"><a href='/boardList'>[포켓몬 월드챔피언십2019 바로가기]</a></div>
+<div className="pt2" data-aos="zoom-in"><img src="./assets/image/app_logo3.png" alt="" /></div>
+<div className="tit4"><a href='/boardList'>[포켓몬 월드챔피언십2019 바로가기]</a></div>
 <div className="lang"><img src="./assets/image/app_txt.png" alt="" /></div>
 
 

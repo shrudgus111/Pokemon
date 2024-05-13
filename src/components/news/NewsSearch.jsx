@@ -6,8 +6,9 @@ const NewsSearchBlock = styled.div`
 background: url("/src/assets/image/nnews_nav_bg.jpg") center bottom;
 width: 100%;
 padding: 45px 0 60px;
+margin-top:10px;
 @media (max-width:993px) {
-    padding: 32px 20px 30px;
+    margin-top:20px;
 }
 .search_wrap{
     display: flex;

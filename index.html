@@ -5,6 +5,13 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"> 
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,12 +19,116 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite + React</title>
+    <script src="./js/jquery-1.12.4.min.js"></script>
     <script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=8cf399efc95799a5fce532ddd8fb5005&libraries=services"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> 
   </head>
   <body>
     <div id="root"></div>
+    <div class="wrap">
+    
+      <div class="introAni">
+         
+              <div><img src="./assets/image/cute-pokemon.gif" alt="
+                  "></div>
+              <div class="introText">0%</div>
+         
+        </div>
+       
+      <div id="app"></div>
+      
+  </div>
+    <style>
+      body {
+        cursor: url('/assets/image/icon_pokemon.png'), auto;
+}
+.wrap {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+        
+.introAni {
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        /* background:linear-gradient(to right, #D44177 0%, #0C68BE 100%) !important; */
+        background: #fff;
+        color: #DA343C;
+        opacity: 0;
+        
+        text-align: center;
+        /* opacity: 0.4; */
+        z-index: 999999999999999999999999999999999999999;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        .introText{
+            font-size: 50px;
+        /* font-weight: 800; */
+         font-family: 'Black Han Sans', 'Gowun Dodum';
+            font-weight: lighter;
+        }
+      }
+      .introAni img {
+    width:30%;
+    margin-bottom: 30px;
+      }
+    </style>
     <script type="module" src="/src/main.jsx"></script>
+    <script>
+
+      $(document).ready(function () {
+          // sessionStorage에 intro 표시 여부를 저장하고, 페이지가 처음 로드될 때만 인트로를 보여줍니다.
+          if (!sessionStorage.getItem("introShown")) {
+              // 인트로를 보여줍니다.
+              $(".introAni").show().css({opacity:1});
+              // sessionStorage에 intro 표시 여부를 저장합니다.
+              sessionStorage.setItem("introShown", true);
+      
+              // 인트로 애니메이션 효과 및 숨기기
+              setTimeout(function () {
+                  let count = 0;
+                  let timer = setInterval(function () {
+                      count++;
+                      if (count >= 100) {
+                          clearInterval(timer);
+                          $(".introAni").fadeOut(500, function () {
+                              $(this).remove();
+                          });
+                      }
+                      $(".introAni div").eq(1).text(count + "%");
+                  }, 25);
+              }, 1);
+          } else if(sessionStorage.getItem("introShown")) {
+              // sessionStorage에 introShown이 이미 있으면 인트로를 숨깁니다.
+              $(".introAni").hide();
+          }
+      
+        
+      });
+      
+      // 인트로 애니메이션을 페이지가 완전히 로드된 후에 시작하도록 이벤트를 바인딩합니다.
+      $(window).on("load", function() {
+          if (!sessionStorage.getItem("introShown")) {
+              // 인트로 애니메이션 효과 및 숨기기
+              let count = 0;
+              let timer = setInterval(function () {
+                  count++;
+                  if (count >= 100) {
+                      clearInterval(timer);
+                      $(".introAni").fadeOut(500, function () {
+                          $(this).remove();
+                      });
+                  }
+                  $(".introAni div").eq(1).text(count + "%");
+              }, 25);
+          }
+      });
+      </script>
      <!-- AOS 스크립트 시작 -->
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script> 

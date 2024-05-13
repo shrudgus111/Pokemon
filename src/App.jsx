@@ -6,6 +6,7 @@ import ProductView from '@/views/ProductView';
 import CartView from '@/views/CartView';
 import LoginView from '@/views/LoginView';
 import JoinView from '@/views/JoinView';
+import MemberModifyView from '@/views/MemberModifyView'
 import EventView from '@/views/EventView';
 import ApplicationView from '@/views/ApplicationView';
 import PlayView from '@/views/PlayView';
@@ -36,6 +37,7 @@ const App = () => {
         <Route path="/event" element={ <EventView />} />
         <Route path="/login" element={ <LoginView /> } />
         <Route path="/join" element={ <JoinView /> } />
+        <Route path="/memberModify" element={ <MemberModifyView /> } />
         <Route path="/application" element={ <ApplicationView /> } />
         <Route path="/play" element={ <PlayView /> } />
         <Route path="/boardList" element={ <BoardListView /> } />
