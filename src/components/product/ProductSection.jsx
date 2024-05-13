@@ -415,7 +415,7 @@ const closeModal = () => {
                   <p><a href="#">{item.title}</a></p>
                   <div className='dam2'>
                     {item.inventory !== cartIdCount(item.id) ? <button onClick={() => dispatch(addToCart(item.id))}><RiShoppingBag3Fill /></button> : <button><BsCartPlus /></button>}
-                    {item.inventory !== cartIdCount(item.id) ? <span>{item.inventory - cartIdCount(item.id)}개 남았습니다!!!!!</span> : <span>품절!!</span>}
+                    {item.inventory !== cartIdCount(item.id) ? <span>{item.inventory - cartIdCount(item.id)}개 남았습니다!!!!!</span> : <span>품절입니다!!!!</span>}
                   </div>
                    <ul className='tx'>
                      <li><b>발매일</b> 2024-03-06 </li>
@@ -459,7 +459,7 @@ const closeModal = () => {
               
                   <div className='dam'>
                     {item.inventory !== cartIdCount(item.id) ? <button onClick={() => dispatch(addToCart(item.id))}><RiShoppingBag3Fill /></button> : <button><BsCartPlus /></button>}
-                    {item.inventory !== cartIdCount(item.id) ? <span>{item.inventory - cartIdCount(item.id)}개 남았습니다!!!!!</span> : <span>품절!!</span>}
+                    {item.inventory !== cartIdCount(item.id) ? <span>{item.inventory - cartIdCount(item.id)}개 남았습니다!!!!!</span> : <span>품절입니다!!!!</span>}
                   </div>
                 </div>
               </ListBlock>

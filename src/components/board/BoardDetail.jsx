@@ -76,7 +76,7 @@ const BoardDetail = ({post}) => {
                             </td>
                         </tr>
                         <tr>
-                            <td>내용</td>
+                            <td>RP</td>
                             <td>
                                 <textarea name="content" value={post.content} disabled ></textarea>
                             </td>
