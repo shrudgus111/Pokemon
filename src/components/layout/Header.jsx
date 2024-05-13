@@ -137,6 +137,67 @@ const ItemCount = styled.div`
     text-align: center;
     font-weight: bold;
   }
+
+  @media(max-width: 991px){
+    position: fixed;
+    right:15px;
+    bottom:112px;
+    background:yellow;
+    border-radius: 20%;
+    z-index:9999999999999999999999;
+  
+    
+    span {
+      position: absolute;
+      top: -10px;
+      right: 45px;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background:#ff5d0e;
+      color: #fff;
+      font-size: 12px;
+      line-height: 20px;
+      text-align: center;
+      font-weight: bold;
+    }
+  
+
+  }
+`
+
+const Quick = styled.div`
+
+position: fixed;
+right:66px;
+bottom:130px;
+z-index:9999999999999999999999;
+.quick{
+  display:flex;
+  align-items: center;
+  justify-content:space-between;
+  #top{
+    margin-left:7px;
+  }
+}
+
+@media(max-width: 991px){
+  position: fixed;
+  right:24px;
+  bottom:56px;
+  z-index:9999999999999999999999;
+  .quick{
+    display:flex;
+    align-items: center;
+    justify-content:space-between;
+    #top{
+      margin-left:7px;
+    }
+  }
+
+}
+
+
 `
 const Hamburger = styled.div`
   position: absolute;
@@ -309,6 +370,13 @@ const Header = () => {
                 <span>{ carts.length }</span> 
               </Link>
             </ItemCount>
+            <Quick>
+            <ul class="quick">
+   
+    <li><a href="/product"><img src="./assets/image/btn_wish.svg" alt="" /></a></li>
+    <li id="top"><a href="javascript:$('html').animate({scrollTop: 0}, 600);"><img src="./assets/image/btn_up.svg" alt="" /></a></li>
+</ul>
+</Quick>
             { mobile &&
             <MobileNav className={ openNav && "on"}>
               <MdClose className={cn("closeNav", openNav && "on")} onClick={()=>setOpenNav(false)} />
@@ -317,22 +385,22 @@ const Header = () => {
 
                 </li>
                 <li>
-                    <NavLink to="/news">새소식</NavLink>
+                    <NavLink to="/news" onClick={() => setOpenNav(false)}>새소식</NavLink>
                 </li>
                 <li>
-                    <NavLink to="/product">제품정보</NavLink>
+                    <NavLink to="/product" onClick={() => setOpenNav(false)}>제품정보</NavLink>
                 </li>
                 <li>
-                    <NavLink to="/play">놀이방법</NavLink>
+                    <NavLink to="/play" onClick={() => setOpenNav(false)}>놀이방법</NavLink>
                 </li>
                 <li>
-                    <NavLink to="/event">이벤트</NavLink>
+                    <NavLink to="/event" onClick={() => setOpenNav(false)}>이벤트</NavLink>
                 </li>
                 <li>
-                    <NavLink to="/search">카드검색</NavLink>
+                    <NavLink to="/search" onClick={() => setOpenNav(false)}>카드검색</NavLink>
                 </li>
                 <li>
-                    <NavLink to="/application">대회신청</NavLink>
+                    <NavLink to="/application" onClick={() => setOpenNav(false)}>대회신청</NavLink>
                 </li>
             </ul>
             </MobileNav>

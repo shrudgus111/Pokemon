@@ -81,7 +81,7 @@ const type = useSelector(state=>state.boards.type)
                             </td>
                         </tr>
                         <tr>
-                            <td>RP</td>
+                            <td>내용</td>
                             <td>
                                 <textarea name="content" value={board.content} onChange={handleChange}></textarea>
                             </td>

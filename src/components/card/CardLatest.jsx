@@ -72,9 +72,15 @@ const CardLatestBlock = styled.div`
         }
         .left:hover .detail1 {
             opacity: 1;
+            @media(max-width:1550px) {
+                opacity: 0;
+            }
         }
         .right:hover .detail2 {
             opacity: 1;
+            @media(max-width:1550px) {
+                opacity: 0;
+            }
         }
         .detail1 {
             position: absolute;
@@ -84,7 +90,6 @@ const CardLatestBlock = styled.div`
             z-index: 0;
             opacity: 0;
             width: 90%;
-            
             .image1 {
                 width: 50%;
                 box-shadow: 5px 5px 10px black;
