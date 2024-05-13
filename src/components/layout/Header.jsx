@@ -288,7 +288,7 @@ const Header = () => {
               { user ?
                 <div className="member">
                   <a href="#" onClick={ handleLogout }><FaUserTimes /></a>
-                  <Link to="/memberModify"><FaUserEdit /></Link>
+                  
                 </div>
                 :
                 <div className="member">

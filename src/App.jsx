@@ -6,6 +6,7 @@ import ProductView from '@/views/ProductView';
 import CartView from '@/views/CartView';
 import LoginView from '@/views/LoginView';
 import JoinView from '@/views/JoinView';
+import MemberModifyView from '@/views/MemberModifyView'
 import EventView from '@/views/EventView';
 import ApplicationView from '@/views/ApplicationView';
 import PlayView from '@/views/PlayView';
@@ -15,6 +16,7 @@ import BoardListView from '@/views/BoardListView';
 import BoardWriteView from '@/views/BoardWriteView';
 import BoardModifyView from '@/views/BoardModifyView';
 import BoardDetailView from '@/views/BoardDetailView';
+import DeckView from '@/views/DeckView';
 
 
 const App = () => {
@@ -35,13 +37,14 @@ const App = () => {
         <Route path="/event" element={ <EventView />} />
         <Route path="/login" element={ <LoginView /> } />
         <Route path="/join" element={ <JoinView /> } />
+        <Route path="/memberModify" element={ <MemberModifyView /> } />
         <Route path="/application" element={ <ApplicationView /> } />
         <Route path="/play" element={ <PlayView /> } />
-  
         <Route path="/boardList" element={ <BoardListView /> } />
         <Route path="/boardWrite" element={ <BoardWriteView /> } />
         <Route path="/boardModify/:subject" element={ <BoardModifyView /> } />
         <Route path="/boardDetail/:subject" element={ <BoardDetailView /> } />
+        <Route path="/deck/:subject" element={ <DeckView /> } />
         
       </Route>
     </Routes>

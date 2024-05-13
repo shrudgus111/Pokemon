@@ -105,7 +105,9 @@ const EventList = () => {
 
     return (
         <EventListBlock>
-            <div className='bg'>
+            <div className='bg' data-aos="flip-right"
+     data-aos-easing="ease-out-cubic"
+     data-aos-duration="2000">
                 {FixedData.map((item, index) => (
                     <div className='list' key={index} onClick={()=> openModal(item)}>
                         <div className='container'>

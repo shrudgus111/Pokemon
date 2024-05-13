@@ -161,8 +161,10 @@ const NewsSection = () => {
 
     return (
         <NewsSectionBlock>
-            <h2>새로운 소식</h2>
-            <div className='container'>
+            <h2 data-aos="fade-down">새로운 소식</h2>
+            <div className='container'  data-aos="flip-left"
+     data-aos-easing="ease-out-cubic"
+     data-aos-duration="2000">
                 {renderedNews}
             </div>
             <div className='more'>

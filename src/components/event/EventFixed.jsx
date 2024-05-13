@@ -103,7 +103,9 @@ const EventFixed = () => {
     }
     return (
         <EventFixedBlock>
-            <div className='bg'>
+            <div className='bg' data-aos="flip-left"
+     data-aos-easing="ease-out-cubic"
+     data-aos-duration="2000">
                 {fixedData.map((item, index) => (
                     <div className='list' key={index} onClick={()=> openModal(item)}>
                         <div className='container'>

@@ -7,9 +7,9 @@ const CardSliderSearchBlock = styled.div`
 position: absolute;
 z-index: 3;
 width: 100%;
-padding: 45px 0 0px;
+margin-top:70px;
 @media (max-width:993px) {
-    padding: 32px 20px 30px;
+ 
 }
 form{
     display: flex;

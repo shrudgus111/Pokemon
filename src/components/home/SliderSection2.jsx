@@ -179,7 +179,7 @@ const SliderSection2 = () => {
  
 <div className='newyou'>
     <div className="bg"></div>
-    <div className="title">POKÉMON in <span> YOUTUBE</span>
+    <div className="title">POKÉMON in <span data-aos="zoom-in"> YOUTUBE</span>
      <Slider {...options}>
                     <div className="slide slide1"><iframe width="100%" height="400" src="https://www.youtube.com/embed/i4MvhzqDoc8?si=eLwL5Q0PjULwTvhK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
                     <div className="slide slide2"><iframe width="100%" height="400" src="https://www.youtube.com/embed/pPnv_kPMpvc?si=C7nKC2PoWxGnU4ym" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
