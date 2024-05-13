@@ -114,7 +114,7 @@ const NewsList = () => {
             <div className='newsWrap'>
                 <div className='thum'>
                     <img src={newsItem.img} alt={newsItem.title}/>
-                    {newsItem.badge && <img className='badge' src="src/assets/image/badge_tri_gradient.png"/>}
+                    {newsItem.badge && <img className='badge' src="/assets/image/badge_tri_gradient.png"/>}
                 </div>
                 <div className='text'>
                     <h3>{newsItem.title}</h3>
@@ -127,7 +127,7 @@ const NewsList = () => {
         ));
       } else if (title && !filteredNews.length) {
         renderedNews = <div className='no_result'>
-                            <div><img src="src/assets/image/no_result2.png" alt="" /></div>
+                            <div><img src="/assets/image/no_result2.png" alt="" /></div>
                             <h3>검색결과가 없습니다.</h3>
                             <p>다른 키워드로 검색해주세요</p>
                         </div>;
@@ -137,7 +137,7 @@ const NewsList = () => {
                 <div className='newsWrap'>
                     <div className='thum'>
                         <img src={item.img} alt={item.title} />
-                        {item.badge && <img className='badge' src="src/assets/image/badge_tri_gradient.png"/>}
+                        {item.badge && <img className='badge' src="/assets/image/badge_tri_gradient.png"/>}
                     </div>
                     <div className='text'>
                         <h3>{item.title}</h3>

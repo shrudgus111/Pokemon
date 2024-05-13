@@ -48,7 +48,7 @@ form{
                 top: 0;
                 bottom: 0;
                 width: 12px;
-                background: url("/src/assets/image/search_left.png");
+                background: url("/assets/image/search_left.png");
                 background-size: cover;
                 @media (max-width:993px) {
                     top: 0px;

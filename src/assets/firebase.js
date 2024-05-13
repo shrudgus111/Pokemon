@@ -3,13 +3,13 @@ import 'firebase/compat/database';
 import 'firebase/compat/storage';
 
 const firebaseConfig = firebase.initializeApp({
-  apiKey: "AIzaSyAxHUZaYTLdx-Tt1JMSXfJBrLPsgoq1KG0",
-  authDomain: "starship-54cea.firebaseapp.com",
-  databaseURL: "https://starship-54cea-default-rtdb.firebaseio.com",
-  projectId: "starship-54cea",
-  storageBucket: "starship-54cea.appspot.com",
-  messagingSenderId: "425785201040",
-  appId: "1:425785201040:web:19dcfcb1ff477643c9a315"
+  apiKey: "AIzaSyBk_TI-0VyBLWAf9mCdGN6cgCzj8yQXzFE",
+  authDomain: "soo-project-73ca3.firebaseapp.com",
+  databaseURL: "https://soo-project-73ca3-default-rtdb.firebaseio.com/",
+  projectId: "soo-project-73ca3",
+  storageBucket: "soo-project-73ca3.appspot.com",
+  messagingSenderId: "512535586432",
+  appId: "1:512535586432:web:6254d32353d8d9848ba865"
   });
 
 const oDB = firebaseConfig.database()

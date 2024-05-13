@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 import { MdOutlineArrowRight } from "react-icons/md";
 
 const NewsSectionBlock = styled.div`
-background: url("/src/assets/image/bg_pattern.jpg");
+background: url("/assets/image/bg_pattern.jpg");
 width: 100%;
 padding: 50px 0 130px;
     h2{

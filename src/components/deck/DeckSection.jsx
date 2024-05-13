@@ -363,49 +363,49 @@ const DeckSection = ({ post }) => {
  const renderImage = () => {
     if (post.subject === '노경현') {
       return <ul className='no'>
-       <li><img src="/assets/card_img/S1W_001.png" alt="노경현" /></li>
-       <li><img src="/assets/card_img/SV5K_024.png" alt="노경현" /></li>
-       <li><img src="/assets/card_img/S9a_006.png" alt="노경현" /></li>
-       <li><img src="/assets/card_img/SV5K_033.png" alt="노경현" /></li>
-       <li><img src="/assets/card_img/S9a_006_m.png" alt="노경현" /></li>
-       <li><img src="/assets/card_img/SV5K_042.png" alt="노경현" /></li>
-       <li><img src="/assets/card_img/S9a_007_m.png" alt="노경현" /></li>
-       <li><img src="/assets/card_img/SV5K_051.png" alt="노경현" /></li>
-       <li><img src="/assets/card_img/S9a_068.png" alt="노경현" /></li>
-       <li><img src="/assets/card_img/SV5K_052.png" alt="노경현" /></li>
-       <li><img src="/assets/card_img/SV4a_025.png" alt="노경현" /></li>
-       <li><img src="/assets/card_img/SV5M_030.png" alt="노경현" /></li>
-       <li><img src="/assets/card_img/SV4a_055.png" alt="노경현" /></li>
-       <li><img src="/assets/card_img/SV5M_036.png" alt="노경현" /></li>
-       <li><img src="/assets/card_img/SV4a_210.png" alt="노경현" /></li>
-       <li><img src="/assets/card_img/SV5M_051.png" alt="노경현" /></li>
-       <li><img src="/assets/card_img/SV4a_236.png" alt="노경현" /></li>
-       <li><img src="/assets/card_img/SV5M_052.png" alt="노경현" /></li>
-       <li><img src="/assets/card_img/SV5K_012.png" alt="노경현" /></li>
-       <li><img src="/assets/card_img/SVG_014.png" alt="노경현" /></li>
+       <li><img src="/assets/image/S1W_001.png" alt="노경현" /></li>
+       <li><img src="/assets/image/SV5K_024.png" alt="노경현" /></li>
+       <li><img src="/assets/image/S9a_006.png" alt="노경현" /></li>
+       <li><img src="/assets/image/SV5K_033.png" alt="노경현" /></li>
+       <li><img src="/assets/image/S9a_006_m.png" alt="노경현" /></li>
+       <li><img src="/assets/image/SV5K_042.png" alt="노경현" /></li>
+       <li><img src="/assets/image/S9a_007_m.png" alt="노경현" /></li>
+       <li><img src="/assets/image/SV5K_051.png" alt="노경현" /></li>
+       <li><img src="/assets/image/S9a_068.png" alt="노경현" /></li>
+       <li><img src="/assets/image/SV5K_052.png" alt="노경현" /></li>
+       <li><img src="/assets/image/SV4a_025.png" alt="노경현" /></li>
+       <li><img src="/assets/image/SV5M_030.png" alt="노경현" /></li>
+       <li><img src="/assets/image/SV4a_055.png" alt="노경현" /></li>
+       <li><img src="/assets/image/SV5M_036.png" alt="노경현" /></li>
+       <li><img src="/assets/image/SV4a_210.png" alt="노경현" /></li>
+       <li><img src="/assets/image/SV5M_051.png" alt="노경현" /></li>
+       <li><img src="/assets/image/SV4a_236.png" alt="노경현" /></li>
+       <li><img src="/assets/image/SV5M_052.png" alt="노경현" /></li>
+       <li><img src="/assets/image/SV5K_012.png" alt="노경현" /></li>
+       <li><img src="/assets/image/SVG_014.png" alt="노경현" /></li>
         </ul>
     } else if (post.subject === '강명수') {
       return <ul className="kang">
-       <li><img src="/assets/card_img/SV4a_025.png" alt="강명수" /></li>
-       <li><img src="/assets/card_img/SV5M_030.png" alt="강명수" /></li>
-       <li><img src="/assets/card_img/SV4a_055.png" alt="강명수" /></li>
-       <li><img src="/assets/card_img/SV5M_036.png" alt="강명수" /></li>
-       <li><img src="/assets/card_img/SV4a_210.png" alt="강명수" /></li>
-       <li><img src="/assets/card_img/SV5M_051.png" alt="강명수" /></li>
-       <li><img src="/assets/card_img/SV4a_236.png" alt="강명수" /></li>
-       <li><img src="/assets/card_img/SV5M_052.png" alt="강명수" /></li>
-       <li><img src="/assets/card_img/SV5K_012.png" alt="강명수" /></li>
-       <li><img src="/assets/card_img/SVG_014.png" alt="강명수" /></li>
-       <li><img src="/assets/card_img/S1W_001.png" alt="강명수" /></li>
-       <li><img src="/assets/card_img/SV5K_024.png"  alt="강명수" /></li>
-       <li><img src="/assets/card_img/S9a_006.png"   alt="강명수" /></li>
-       <li><img src="/assets/card_img/SV5K_033.png"  alt="강명수" /></li>
-       <li><img src="/assets/card_img/S9a_006_m.png" alt="강명수" /></li>
-       <li><img src="/assets/card_img/SV5K_042.png"  alt="강명수" /></li>
-       <li><img src="/assets/card_img/S9a_007_m.png" alt="강명수" /></li>
-       <li><img src="/assets/card_img/SV5K_051.png"  alt="강명수" /></li>
-       <li><img src="/assets/card_img/S9a_068.png"   alt="강명수" /></li>
-       <li><img src="/assets/card_img/SV5K_052.png"  alt="강명수" /></li>
+       <li><img src="/assets/image/SV4a_025.png" alt="강명수" /></li>
+       <li><img src="/assets/image/SV5M_030.png" alt="강명수" /></li>
+       <li><img src="/assets/image/SV4a_055.png" alt="강명수" /></li>
+       <li><img src="/assets/image/SV5M_036.png" alt="강명수" /></li>
+       <li><img src="/assets/image/SV4a_210.png" alt="강명수" /></li>
+       <li><img src="/assets/image/SV5M_051.png" alt="강명수" /></li>
+       <li><img src="/assets/image/SV4a_236.png" alt="강명수" /></li>
+       <li><img src="/assets/image/SV5M_052.png" alt="강명수" /></li>
+       <li><img src="/assets/image/SV5K_012.png" alt="강명수" /></li>
+       <li><img src="/assets/image/SVG_014.png" alt="강명수" /></li>
+       <li><img src="/assets/image/S1W_001.png" alt="강명수" /></li>
+       <li><img src="/assets/image/SV5K_024.png"  alt="강명수" /></li>
+       <li><img src="/assets/image/S9a_006.png"   alt="강명수" /></li>
+       <li><img src="/assets/image/SV5K_033.png"  alt="강명수" /></li>
+       <li><img src="/assets/image/S9a_006_m.png" alt="강명수" /></li>
+       <li><img src="/assets/image/SV5K_042.png"  alt="강명수" /></li>
+       <li><img src="/assets/image/S9a_007_m.png" alt="강명수" /></li>
+       <li><img src="/assets/image/SV5K_051.png"  alt="강명수" /></li>
+       <li><img src="/assets/image/S9a_068.png"   alt="강명수" /></li>
+       <li><img src="/assets/image/SV5K_052.png"  alt="강명수" /></li>
       </ul>
     } else {
       return null; 
