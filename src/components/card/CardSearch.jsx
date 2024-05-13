@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { useDispatch } from 'react-redux'
 import { getName } from '@/store/card'
 const CardSearchBlock = styled.div`
-background: url("/src/assets/image/cards-bg.jpg");
+background: url("/assets/image/cards-bg.jpg");
 padding: 50px 0;
 .search_wrap{
     margin: 0 auto;

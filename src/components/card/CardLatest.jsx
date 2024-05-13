@@ -30,7 +30,7 @@ const CardLatestBlock = styled.div`
         width: 100%;
         height: 29px;
         background-size: cover;
-        background-image: url(/src/assets/image/bg_top_dark.png);
+        background-image: url(/assets/image/bg_top_dark.png);
         background-repeat: no-repeat;
     }
 }
@@ -159,21 +159,21 @@ const CardLatest = () => {
         <CardLatestBlock className='first'>
             <div className='card_pack'>
                 <div className={`left ${activeDeck === "old" ? 'active' : ''}`}>
-                    <img className='deckname' onClick={() => handleClick("old")} src="/src/assets/image/pr1.png" alt="" />
-                    <img className='logo1' src="/src/assets/image/코라이돈.png" alt="" />
+                    <img className='deckname' onClick={() => handleClick("old")} src="/assets/image/pr1.png" alt="" />
+                    <img className='logo1' src="/assets/image/코라이돈.png" alt="" />
                     <div className='detail1'>
-                        <img className='image1' src="/src/assets/card_img/SV5K_052.png" alt="" />
-                        <img className='image2' src="/src/assets/card_img/SV5K_024.png" alt="" />
-                        <img className='image3' src="/src/assets/card_img/SV5K_053.png" alt="" />
+                        <img className='image1' src="/assets/image/SV5K_052.png" alt="" />
+                        <img className='image2' src="/assets/image/SV5K_024.png" alt="" />
+                        <img className='image3' src="/assets/image/SV5K_053.png" alt="" />
                     </div>
                 </div>
                 <div className={`right ${activeDeck === "new" ? 'active' : ''}`}>
-                    <img className='deckname' onClick={() => handleClick("new")} src="/src/assets/image/pr2.png" alt="" />
-                    <img className='logo2' src="/src/assets/image/미라이돈.png" alt="" />
+                    <img className='deckname' onClick={() => handleClick("new")} src="/assets/image/pr2.png" alt="" />
+                    <img className='logo2' src="/assets/image/미라이돈.png" alt="" />
                     <div className='detail2'>
-                        <img className='image1' src="/src/assets/card_img/SV5M_052.png" alt="" />
-                        <img className='image2' src="/src/assets/card_img/SV5M_035.png" alt="" />
-                        <img className='image3' src="/src/assets/card_img/SV5M_016.png" alt="" />
+                        <img className='image1' src="/assets/image/SV5M_052.png" alt="" />
+                        <img className='image2' src="/assets/image/SV5M_035.png" alt="" />
+                        <img className='image3' src="/assets/image/SV5M_016.png" alt="" />
                     </div>
                 </div>
             </div>
