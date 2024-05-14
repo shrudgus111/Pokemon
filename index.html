@@ -42,6 +42,8 @@
             width: 30%;
             background: #fff;
             color: #DA343C;
+            font-weight: 800;
+            font-size: 30px;
             opacity: 0;
             text-align: center;
             z-index: 999999999999999999999999999999999999999;
@@ -50,10 +52,21 @@
             align-items: center;
             justify-content: center;
         }
-        .introAni img {
-            width:30%;
-            margin-bottom: 30px;
+        .introAni div {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
         }
+        .introAni img {
+            width:60%;
+            max-width: 100%; /* 이미지를 부모 요소에 맞게 조정 */
+            max-height: 100%; /* 이미지를 부모 요소에 맞게 조정 */
+        }
+        .introText{
+            margin-top: 80px;
+        }
+       
     </style>
     <script type="module" src="/src/main.jsx"></script>
     <script>
