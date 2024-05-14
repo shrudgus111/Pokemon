@@ -15,7 +15,7 @@ import { MdClose } from "react-icons/md";
 
 const HeaderBlock = styled.div`
 position: fixed;
-z-index: 99999;
+z-index: 999;
 top:0;
 left: 0;
 right: 0;
