@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import eventData from '@/assets/data/event'
 
 const EventFixedBlock = styled.div`
-background-image: url('src/assets/image/event-bg1.png');
+background-image: url('/assets/image/event-bg1.png');
 width: 100%;
 padding: 5%;
 .bg {

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { useDispatch } from 'react-redux';
 import { getTitle } from '@/store/news';
 const NewsSearchBlock = styled.div`
-background: url("/src/assets/image/nnews_nav_bg.jpg") center bottom;
+background: url("/assets/image/nnews_nav_bg.jpg") center bottom;
 width: 100%;
 padding: 45px 0 60px;
 margin-top:10px;
@@ -39,7 +39,7 @@ margin-top:10px;
             top: 0;
             bottom: 0;
             width: 12px;
-            background: url("/src/assets/image/search_left.png");
+            background: url("/assets/image/search_left.png");
             background-size: cover;
             @media (max-width:993px) {
                 top: 0px;

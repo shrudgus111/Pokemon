@@ -84,7 +84,7 @@ const CardList = () => {
   } else if (name && !filteredCards.length) {
     renderedCards = (
       <NoResultBlock>
-        <div><img src="src/assets/image/no_result2.png" alt="" /></div>
+        <div><img src="/assets/image/no_result2.png" alt="" /></div>
         <h3>검색결과가 없습니다.</h3>
         <p>다른 키워드로 검색해주세요</p>
       </NoResultBlock>

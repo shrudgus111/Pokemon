@@ -49,7 +49,7 @@ const CardSliderBlock = styled.div`
         left: 0%;
       }
       &:hover {
-        content: url("/src/assets/image/swiper_prev_dark_hover.png");
+        content: url("/assets/image/swiper_prev_dark_hover.png");
       }
     }
     &.slick-next { 
@@ -58,7 +58,7 @@ const CardSliderBlock = styled.div`
         right: 0%;
       }
       &:hover {
-        content: url("/src/assets/image/swiper_next_dark_hover.png");
+        content: url("/assets/image/swiper_next_dark_hover.png");
       }
     } 
   }
@@ -111,7 +111,7 @@ const CardSliderBlock = styled.div`
       position: absolute;
       top: 45%;
       left: 0;
-      background: url("/src/assets/image/koraidon.png") no-repeat;
+      background: url("/assets/image/koraidon.png") no-repeat;
       width: 0%;
       height: 57%;
       z-index: 3;
@@ -182,11 +182,11 @@ const NoResultBlock = styled.div`
 const getBackgroundImage = (series) => {
   switch(series) {
     case 'old':
-      return 'url("/src/assets/image/korai_bg.jpg")';
+      return 'url("/assets/image/korai_bg.jpg")';
     case 'new':
-      return 'url("/src/assets/image/miraidon_bg.jpg")';
+      return 'url("/assets/image/miraidon_bg.jpg")';
     default:
-      return 'url("/src/assets/image/korai_bg.jpg")';
+      return 'url("/assets/image/korai_bg.jpg")';
   }
 };
 
@@ -283,7 +283,7 @@ const CardSlider = () => {
   }  else if (name && !filteredCards.length) {
     noResult = (
       <NoResultBlock>
-        <div><img src="src/assets/image/no_result2.png" alt="" /></div>
+        <div><img src="/assets/image/no_result2.png" alt="" /></div>
         <h3>검색결과가 없습니다.</h3>
         <p>다른 키워드로 검색해주세요</p>
       </NoResultBlock>
