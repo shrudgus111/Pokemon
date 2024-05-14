@@ -15,7 +15,7 @@ import { MdClose } from "react-icons/md";
 
 const HeaderBlock = styled.div`
 position: fixed;
-z-index: 99999;
+z-index: 999;
 top:0;
 left: 0;
 right: 0;
@@ -176,8 +176,15 @@ z-index:9999999999999999999999;
   display:flex;
   align-items: center;
   justify-content:space-between;
+  cursor:pointer;
+  li {
+    cursor: pointer; 
+    
+  }
   #top{
     margin-left:7px;
+    cursor:pointer;
+    
   }
 }
 
@@ -309,7 +316,11 @@ const Header = () => {
       if (loging) {
         dispatch(userLogin(JSON.parse(loging)))
       }
-    }, [dispatch])
+    }, [dispatch]);
+
+    const scrollToTop = () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
 
     return (
         <HeaderBlock>
@@ -374,7 +385,9 @@ const Header = () => {
             <ul class="quick">
    
     <li><a href="/product"><img src="./assets/image/btn_wish.svg" alt="" /></a></li>
-    <li id="top"><a href="javascript:$('html').animate({scrollTop: 0}, 600);"><img src="./assets/image/btn_up.svg" alt="" /></a></li>
+    <li id="top" onClick={scrollToTop}>
+          <img src="./assets/image/btn_up.svg" alt="" /> 
+          </li>
 </ul>
 </Quick>
             { mobile &&
