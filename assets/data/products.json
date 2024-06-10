@@ -1,0 +1,32 @@
+[
+    { "category":"구축덱", "id":1001, "title":"스칼렛&바이올렛 확장팩 「와일드포스」", "price":437500,  "description":"테스트", "inventory":965400, "image":"./assets/image/pr1.png" },
+    { "category":"특별제품", "id":2005, "title":"포켓몬 카드 게임 카드 실드 프리미엄 「팬텀」", "price":422750,  "description":"", "inventory":2225, "image":"./assets/image/pr10.gif" },
+    { "category":"구축덱", "id":1002, "title":"스칼렛&바이올렛 확장팩 「사이버저지」", "price":124750,  "description":"", "inventory":2330, "image":"./assets/image/pr13.gif" },
+    { "category":"특별제품", "id":2001, "title":"포켓몬 카드 게임 카드 실드 「벨」", "price":437500,  "description":"", "inventory":1330, "image":"./assets/image/nr1.png" },
+    { "category":"구축덱", "id":2004, "title":"스칼렛&바이올렛 확장팩 「사이버저지」", "price":123750,  "description":"", "inventory":1120, "image":"./assets/image/pr8.png" },
+    { "category":"특별제품", "id":2002, "title":"포켓몬 카드플레이매트 「Pokémon in a dream」", "price":124750,  "description":"", "inventory":22340, "image":"./assets/image/nr2.png" },
+    { "category":"구축덱", "id":1003, "title":"스칼렛&바이올렛 확장팩 「사이버저지」", "price":412750,  "description":"", "inventory":32340, "image":"./assets/image/pr3.png" },
+    { "category":"구축덱", "id":1004, "title":"스칼렛&바이올렛 확장팩 「미래의 일섬」", "price":123750,  "description":"", "inventory":12340, "image":"./assets/image/pr4.png" },
+
+    { "category":"구축덱", "id":1005, "title":"스칼렛&바이올렛 강화 확장팩 「레이징서프」", "price":422750,  "description":"", "inventory":12340, "image":"./assets/image/pr5.png" },
+    { "category":"특별제품", "id":2003, "title":"포켓몬 카드 게임 플레이매트 「MELEEP IN A DREAM」", "price":412750,  "description":"", "inventory":12340, "image":"./assets/image/nr3.png" },
+    { "category":"구축덱", "id":2004, "title":"스칼렛&바이올렛 확장팩 「흑염의 지배자」", "price":123750,  "description":"", "inventory":10, "image":"./assets/image/pr9.png" },
+    { "category":"특별제품", "id":2004, "title":"포켓몬 카드 게임 플레이매트 케이스 「아메리칸 코믹스 피카츄」", "price":123750,  "description":"", "inventory":10, "image":"./assets/image/nr4.png" },
+    { "category":"구축덱", "id":2004, "title":"스칼렛&바이올렛 강화 확장팩 「포켓몬 카드 151」", "price":123750,  "description":"", "inventory":12340, "image":"./assets/image/pr11.png" },
+    { "category":"특별제품", "id":2005, "title":"포켓몬 카드 게임 카드 실드 「하나 되는 세계」", "price":422750,  "description":"", "inventory":5, "image":"./assets/image/nr5.png" },
+    { "category":"구축덱", "id":1005, "title":"스칼렛&바이올렛 확장팩 「스노해저드」", "price":422750,  "description":"", "inventory":5, "image":"./assets/image/pr6.png" },
+    { "category":"특별제품", "id":2003, "title":"포켓몬 카드 게임 카드 실드 「돌핀맨」", "price":412750,  "description":"", "inventory":12340, "image":"./assets/image/nr6.png" },
+    { "category":"구축덱", "id":2004, "title":"스칼렛&바이올렛 확장팩 「스노해저드」", "price":123750,  "description":"", "inventory":12340, "image":"./assets/image/pr12.png" },
+    { "category":"구축덱", "id":2004, "title":"스칼렛&바이올렛 확장팩 「클레이버스트」", "price":123750,  "description":"", "inventory":10, "image":"./assets/image/pr7.png" },
+    { "category":"특별제품", "id":2005, "title":"포켓몬 카드 게임 카드 실드 「한판내기」", "price":422750,  "description":"", "inventory":12340, "image":"./assets/image/nr7.png" },
+    { "category":"구축덱", "id":2004, "title":"스칼렛&바이올렛 강화 확장팩 「포켓몬 카드 151」", "price":123750,  "description":"", "inventory":12340, "image":"./assets/image/pr10.gif" },
+    { "category":"특별제품", "id":2005, "title":"포켓몬 카드플레이매트 「Pokémon in a dream」", "price":422750,  "description":"", "inventory":5, "image":"./assets/image/nr8.png" },
+    { "category":"구축덱", "id":2004, "title":"스칼렛&바이올렛 강화 확장팩 「포켓몬 카드 151」", "price":123750,  "description":"", "inventory":12340, "image":"./assets/image/pr2.png" },
+    { "category":"특별제품", "id":2005, "title":"포켓몬 카드 게임 카드 실드 「돌핀맨」", "price":422750,  "description":"", "inventory":5, "image":"./assets/image/nr9.png" },
+    { "category":"구축덱", "id":2004, "title":"스칼렛&바이올렛 강화 확장팩 「레이징서프」", "price":123750,  "description":"", "inventory":10, "image":"./assets/image/pr3.png" },
+    { "category":"특별제품", "id":2005, "title":"포켓몬 카드플레이매트 「Pokémon in a dream」", "price":422750,  "description":"", "inventory":12340, "image":"./assets/image/nr10.png" },
+    { "category":"구축덱", "id":2004, "title":"스칼렛&바이올렛 확장팩 「사이버저지」", "price":123750,  "description":"", "inventory":12340, "image":"./assets/image/pr4.png" },
+    { "category":"특별제품", "id":2005, "title":"포켓몬 카드 게임 카드 실드 「돌핀맨」", "price":422750,  "description":"", "inventory":12340, "image":"./assets/image/nr11.png" },
+    { "category":"구축덱", "id":2004, "title":"스칼렛&바이올렛 강화 확장팩 「포켓몬 카드 151」", "price":123750,  "description":"", "inventory":12340, "image":"./assets/image/pr5.png" }
+ 
+]
